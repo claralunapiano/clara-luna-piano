@@ -14,163 +14,235 @@
   <meta name="description" content="Aprende piano clásico desde cero. +6,000 estudiantes. Método completo en PDF y video para principiantes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--ivory:#F7F4EE;--cream:#EDE8DF;--gold:#B8933A;--gold-light:#D4AA56;--gold-pale:#F0E6C8;--charcoal:#1C1A16;--charcoal-mid:#3A3730;--charcoal-soft:#6B6660;--white:#FDFCFA}
+    :root{
+      --cream:#fff4c6;
+      --red:#ff3d00;
+      --black:#1d1d1b;
+      --yellow:#dad159;
+      --white:#ffffff;
+      --gray:#f5f5f5;
+      --text-muted:#5a5a58;
+    }
     html{scroll-behavior:smooth}
-    body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--charcoal);overflow-x:hidden}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 5%;background:rgba(247,244,238,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(184,147,58,0.2)}
-    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;letter-spacing:0.12em;color:var(--charcoal);text-decoration:none}
-    .nav-logo span{color:var(--gold);font-style:italic}
+    body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:var(--black);border-bottom:3px solid var(--red)}
+    .nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:0.05em;color:var(--cream);text-decoration:none;text-transform:uppercase}
+    .nav-logo span{color:var(--yellow)}
     .nav-links{display:flex;gap:2rem;list-style:none}
-    .nav-links a{font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--charcoal-soft);text-decoration:none;transition:color 0.2s}
-    .nav-links a:hover{color:var(--gold)}
-    .nav-cta{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:0.6rem 1.4rem;text-decoration:none;transition:background 0.2s}
-    .nav-cta:hover{background:var(--gold)}
-    .hero{min-height:100vh;display:flex;align-items:center;padding:7rem 5% 4rem;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;top:-200px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(184,147,58,0.08) 0%,transparent 70%);pointer-events:none}
-    .hero-eyebrow{font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem}
-    .hero-eyebrow::before{content:'';display:block;width:32px;height:0.5px;background:var(--gold)}
-    .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,4.8rem);font-weight:300;line-height:1.1;color:var(--charcoal);margin-bottom:1.5rem}
-    .hero h1 em{font-style:italic;color:var(--gold)}
-    .hero-sub{font-size:1.05rem;line-height:1.8;color:var(--charcoal-soft);max-width:480px;margin-bottom:1.5rem;font-weight:300}
-    .hero-sp{display:flex;align-items:center;gap:1.25rem;margin-bottom:2rem;padding:1rem 1.25rem;background:var(--white);border-left:2px solid var(--gold)}
+    .nav-links a{font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--yellow)}
+    .nav-cta{font-size:0.75rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--black);background:var(--yellow);padding:0.6rem 1.5rem;text-decoration:none;transition:all 0.2s}
+    .nav-cta:hover{background:var(--red);color:var(--white)}
+
+    /* HERO */
+    .hero{min-height:100vh;display:flex;align-items:center;padding:8rem 5% 5rem;background:var(--black);position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,transparent 0%,rgba(218,209,89,0.06) 100%);pointer-events:none}
+    .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),var(--yellow),var(--red))}
+    .hero-content{max-width:780px}
+    .hero-eyebrow{font-size:0.75rem;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--yellow);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem}
+    .hero-eyebrow::before{content:'';display:block;width:32px;height:2px;background:var(--red)}
+    .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:900;line-height:0.95;letter-spacing:-0.01em;color:var(--white);margin-bottom:1.5rem;text-transform:uppercase}
+    .hero h1 em{font-style:italic;color:var(--yellow);display:block}
+    .hero-sub{font-size:1.1rem;font-weight:400;line-height:1.7;color:rgba(255,255,255,0.65);max-width:540px;margin-bottom:2rem}
+    .hero-sp{display:flex;align-items:center;gap:1.5rem;margin-bottom:2.5rem;padding:1.25rem 1.5rem;background:rgba(255,255,255,0.05);border-left:3px solid var(--red)}
     .sp-item{text-align:center}
-    .sp-num{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--charcoal);line-height:1}
-    .sp-lbl{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal-soft)}
-    .sp-div{width:0.5px;height:32px;background:var(--cream)}
-    .price-block{display:flex;align-items:baseline;gap:1rem;margin-bottom:2rem}
-    .price-main{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--charcoal)}
-    .price-orig{font-size:1.1rem;color:var(--charcoal-soft);text-decoration:line-through}
-    .price-badge{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;background:var(--gold);color:var(--white);padding:0.3rem 0.75rem}
+    .sp-num{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;color:var(--yellow);line-height:1}
+    .sp-lbl{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
+    .sp-div{width:1px;height:36px;background:rgba(255,255,255,0.1)}
+    .price-block{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
+    .price-main{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:900;color:var(--white);line-height:1}
+    .price-orig{font-size:1.1rem;font-weight:600;color:rgba(255,255,255,0.35);text-decoration:line-through}
+    .price-badge{font-size:0.75rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;background:var(--red);color:var(--white);padding:0.4rem 1rem}
     .hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
-    .btn-primary{font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:1rem 2.5rem;text-decoration:none;display:inline-block;transition:all 0.25s;border:1px solid var(--charcoal)}
-    .btn-primary:hover{background:var(--gold);border-color:var(--gold)}
-    .btn-ghost{font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--charcoal-soft);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.2s}
-    .btn-ghost:hover{color:var(--gold)}
-    .hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
-    .hero-visual img{width:100%;max-width:520px;display:block}
-    .trust-bar{background:var(--charcoal);padding:1.25rem 5%;display:flex;justify-content:center;align-items:center;gap:3rem;flex-wrap:wrap}
-    .trust-item{display:flex;align-items:center;gap:0.6rem;color:rgba(255,255,255,0.55);font-size:0.78rem;letter-spacing:0.08em}
-    .numbers-bar{background:var(--charcoal);display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background-color:rgba(255,255,255,0.08)}
-    .num-card{background:var(--charcoal);padding:2.5rem 2rem;text-align:center}
-    .num-val{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gold-light);line-height:1;margin-bottom:0.5rem}
-    .num-lbl{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
+    .btn-primary{font-size:0.85rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--black);background:var(--yellow);padding:1.1rem 2.5rem;text-decoration:none;display:inline-block;transition:all 0.2s}
+    .btn-primary:hover{background:var(--red);color:var(--white)}
+    .btn-ghost{font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.2s}
+    .btn-ghost:hover{color:var(--yellow)}
+
+    /* TRUST BAR */
+    .trust-bar{background:var(--red);padding:1rem 5%;display:flex;justify-content:center;align-items:center;gap:3rem;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:0.6rem;color:rgba(255,255,255,0.9);font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+
+    /* NUMBERS */
+    .numbers-bar{background:var(--cream);display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background-color:rgba(0,0,0,0.1)}
+    .num-card{background:var(--cream);padding:2.5rem 2rem;text-align:center}
+    .num-val{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:900;color:var(--black);line-height:1;margin-bottom:0.25rem}
+    .num-lbl{font-size:0.72rem;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted)}
+
+    /* SECTIONS */
     section{padding:6rem 5%}
-    .sec-label{font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem}
-    .sec-label::after{content:'';flex:1;max-width:40px;height:0.5px;background:var(--gold)}
-    .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.2rem);font-weight:300;line-height:1.15;color:var(--charcoal);margin-bottom:1rem}
-    .sec-title em{font-style:italic;color:var(--gold)}
-    .sec-intro{font-size:1rem;line-height:1.8;color:var(--charcoal-soft);font-weight:300;max-width:580px}
+    .sec-label{font-size:0.68rem;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem}
+    .sec-label::after{content:'';flex:1;max-width:40px;height:2px;background:var(--red)}
+    .sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,4vw,3.8rem);font-weight:900;line-height:1;color:var(--black);margin-bottom:1rem;text-transform:uppercase}
+    .sec-title em{font-style:italic;color:var(--red)}
+    .sec-title-white{color:var(--white)}
+    .sec-title-white em{color:var(--yellow)}
+    .sec-intro{font-size:1rem;font-weight:400;line-height:1.8;color:var(--text-muted);max-width:580px}
+
+    /* VIDEO */
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem}
-    .vid-thumb{position:relative;padding-bottom:56.25%;background:var(--charcoal);overflow:hidden;cursor:pointer}
+    .vid-thumb{position:relative;padding-bottom:56.25%;background:var(--black);overflow:hidden;cursor:pointer}
     .vid-thumb img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.75;transition:opacity 0.3s}
     .vid-thumb:hover img{opacity:0.9}
     .play-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
-    .play-circle{width:72px;height:72px;background:rgba(184,147,58,0.95);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform 0.2s}
-    .vid-thumb:hover .play-circle{transform:scale(1.05)}
-    .play-lbl{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.8)}
-    .vid-tag{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
-    .vid-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;line-height:1.2;color:var(--charcoal);margin-bottom:1rem}
-    .vid-desc{font-size:0.95rem;line-height:1.8;color:var(--charcoal-soft);font-weight:300;margin-bottom:2rem}
+    .play-circle{width:72px;height:72px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform 0.2s}
+    .vid-thumb:hover .play-circle{transform:scale(1.08)}
+    .play-lbl{font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.9)}
+    .vid-tag{font-size:0.68rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:0.75rem}
+    .vid-title{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:800;line-height:1.1;color:var(--black);margin-bottom:1rem;text-transform:uppercase}
+    .vid-desc{font-size:0.95rem;line-height:1.8;color:var(--text-muted);margin-bottom:2rem}
     .vid-stats{display:flex;gap:2rem}
-    .vs-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--charcoal)}
-    .vs-lbl{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--charcoal-soft)}
-    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:3.5rem;background:var(--cream)}
-    .why-card{background:var(--ivory);padding:2.5rem 2rem;transition:background 0.2s}
-    .why-card:hover{background:var(--white)}
-    .why-icon{width:40px;height:40px;margin-bottom:1.5rem;color:var(--gold)}
-    .why-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--charcoal);margin-bottom:0.75rem}
-    .why-desc{font-size:0.88rem;line-height:1.8;color:var(--charcoal-soft);font-weight:300}
-    .dark-section{background:var(--charcoal);color:var(--white)}
-    .dark-section .sec-title{color:var(--white)}
-    .dark-section .sec-intro{color:rgba(255,255,255,0.5)}
-    .mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3.5rem;background:rgba(255,255,255,0.08)}
-    .mod-card{background:var(--charcoal);padding:2rem;transition:background 0.2s}
-    .mod-card:hover{background:var(--charcoal-mid)}
-    .mod-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:rgba(184,147,58,0.25);line-height:1;margin-bottom:0.75rem}
-    .mod-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--white);margin-bottom:0.5rem}
+    .vs-num{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;color:var(--black)}
+    .vs-lbl{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted)}
+
+    /* WHY */
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:3.5rem;background:rgba(0,0,0,0.08)}
+    .why-card{background:var(--gray);padding:2.5rem 2rem;transition:background 0.2s}
+    .why-card:hover{background:var(--cream)}
+    .why-icon{width:40px;height:40px;margin-bottom:1.5rem;color:var(--red)}
+    .why-title{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;color:var(--black);margin-bottom:0.75rem;text-transform:uppercase}
+    .why-desc{font-size:0.88rem;line-height:1.8;color:var(--text-muted)}
+
+    /* CURRICULUM */
+    .dark-section{background:var(--black)}
+    .mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:3.5rem;background:rgba(255,255,255,0.06)}
+    .mod-card{background:var(--black);padding:2rem;transition:background 0.2s;border-left:3px solid transparent}
+    .mod-card:hover{background:#2a2a28;border-left-color:var(--red)}
+    .mod-num{font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:900;color:rgba(218,209,89,0.2);line-height:1;margin-bottom:0.75rem}
+    .mod-title{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:800;color:var(--white);margin-bottom:0.5rem;text-transform:uppercase}
     .mod-topics{list-style:none;display:flex;flex-direction:column;gap:0.25rem}
-    .mod-topics li{font-size:0.78rem;color:rgba(255,255,255,0.35);font-weight:300;padding-left:0.75rem;position:relative}
-    .mod-topics li::before{content:'—';position:absolute;left:0;color:rgba(184,147,58,0.4)}
-    .prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3.5rem}
-    .prod-card{border:0.5px solid var(--cream);padding:2rem;background:var(--white);transition:border-color 0.2s}
-    .prod-card:hover{border-color:var(--gold-light)}
-    .prod-tag{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;background:var(--charcoal);color:var(--gold-light);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:0.75rem}
-    .prod-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--charcoal);margin-bottom:0.4rem;line-height:1.3}
-    .prod-fmt{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+    .mod-topics li{font-size:0.78rem;color:rgba(255,255,255,0.35);padding-left:0.75rem;position:relative}
+    .mod-topics li::before{content:'—';position:absolute;left:0;color:rgba(255,61,0,0.5)}
+
+    /* INCLUDED */
+    .prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:3.5rem;background:rgba(0,0,0,0.08)}
+    .prod-card{background:var(--white);padding:2rem;transition:all 0.2s;border-top:3px solid transparent}
+    .prod-card:hover{background:var(--cream);border-top-color:var(--red)}
+    .prod-tag{font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;background:var(--black);color:var(--yellow);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:0.75rem}
+    .prod-name{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:800;color:var(--black);margin-bottom:0.4rem;line-height:1.2;text-transform:uppercase}
+    .prod-fmt{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:1rem}
     .prod-feats{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
-    .prod-feats li{font-size:0.82rem;color:var(--charcoal-soft);display:flex;align-items:flex-start;gap:0.5rem;font-weight:300}
-    .prod-feats li::before{content:'—';color:var(--gold);flex-shrink:0}
-    .testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3.5rem}
-    .testi-card{background:var(--white);padding:2rem;border:0.5px solid rgba(184,147,58,0.15)}
-    .stars{display:flex;gap:0.25rem;margin-bottom:1rem;color:var(--gold)}
-    .testi-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;font-style:italic;line-height:1.7;color:var(--charcoal);margin-bottom:1.25rem}
+    .prod-feats li{font-size:0.82rem;color:var(--text-muted);display:flex;align-items:flex-start;gap:0.5rem}
+    .prod-feats li::before{content:'—';color:var(--red);flex-shrink:0}
+
+    /* TESTIMONIALS */
+    .testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:3.5rem;background:rgba(0,0,0,0.08)}
+    .testi-card{background:var(--white);padding:2rem;transition:background 0.2s}
+    .testi-card:hover{background:var(--cream)}
+    .stars{display:flex;gap:0.25rem;margin-bottom:1rem;color:var(--red)}
+    .testi-text{font-size:1rem;font-weight:400;font-style:italic;line-height:1.7;color:var(--black);margin-bottom:1.25rem}
     .testi-author{display:flex;align-items:center;gap:0.75rem}
-    .testi-avatar{width:36px;height:36px;background:var(--charcoal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold-light);flex-shrink:0}
-    .testi-name{font-size:0.85rem;font-weight:500;color:var(--charcoal)}
-    .testi-ver{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)}
-    .pricing-wrap{max-width:680px;margin:3.5rem auto 0;background:var(--white);border:0.5px solid rgba(184,147,58,0.3);position:relative;overflow:hidden}
-    .pricing-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--charcoal),var(--gold),var(--charcoal))}
-    .pricing-head{padding:2.5rem 2.5rem 2rem;border-bottom:0.5px solid var(--cream)}
-    .pricing-lbl{font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-    .pricing-ttl{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--charcoal);margin-bottom:0.5rem}
-    .pricing-sub{font-size:0.88rem;color:var(--charcoal-soft);font-weight:300}
+    .testi-avatar{width:36px;height:36px;background:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:900;color:var(--yellow);flex-shrink:0}
+    .testi-name{font-size:0.85rem;font-weight:700;color:var(--black)}
+    .testi-ver{font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red)}
+
+    /* PRICING */
+    .pricing-wrap{max-width:680px;margin:3.5rem auto 0;background:var(--white);border:3px solid var(--black);position:relative}
+    .pricing-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--red),var(--yellow),var(--red))}
+    .pricing-head{padding:2.5rem 2.5rem 2rem;border-bottom:2px solid var(--gray)}
+    .pricing-lbl{font-size:0.68rem;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);margin-bottom:1rem}
+    .pricing-ttl{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:900;color:var(--black);margin-bottom:0.5rem;text-transform:uppercase}
+    .pricing-sub{font-size:0.88rem;color:var(--text-muted)}
     .pricing-body{padding:2rem 2.5rem}
     .pricing-items{list-style:none;display:flex;flex-direction:column;gap:0.9rem;margin-bottom:2rem}
-    .pricing-items li{font-size:0.88rem;color:var(--charcoal-mid);display:flex;align-items:center;gap:0.75rem;font-weight:300}
-    .chk{width:18px;height:18px;background:var(--charcoal);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold-light)}
+    .pricing-items li{font-size:0.88rem;color:var(--black);display:flex;align-items:center;gap:0.75rem;font-weight:500}
+    .chk{width:20px;height:20px;background:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--yellow)}
     .amt-row{display:flex;align-items:baseline;gap:1rem;margin-bottom:0.5rem}
-    .amt-main{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--charcoal);line-height:1}
-    .amt-orig{font-size:1.1rem;color:var(--charcoal-soft);text-decoration:line-through}
-    .amt-save{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)}
-    .pricing-note{font-size:0.78rem;color:var(--charcoal-soft);margin-bottom:0.75rem;font-weight:300}
-    .discount-box{background:var(--gold-pale);border:0.5px solid var(--gold-light);padding:1rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
-    .discount-box p{font-size:0.88rem;color:var(--charcoal-soft);font-weight:300;line-height:1.5}
-    .dcode{font-family:'Cormorant Garamond',serif;font-size:1.2rem;letter-spacing:0.1em;color:var(--charcoal);font-weight:600}
-    .btn-buy{display:block;width:100%;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:1.25rem;text-decoration:none;text-align:center;transition:background 0.25s;border:none;cursor:pointer}
-    .btn-buy:hover{background:var(--gold)}
-    .pricing-secure{display:flex;align-items:center;gap:0.75rem;margin-top:1.25rem;padding-top:1.25rem;border-top:0.5px solid var(--cream)}
-    .pricing-secure svg{color:var(--gold);flex-shrink:0}
-    .pricing-secure p{font-size:0.78rem;color:var(--charcoal-soft);font-weight:300;line-height:1.5}
-    .faq-list{max-width:720px;margin:3.5rem auto 0;display:flex;flex-direction:column;gap:1px;background:var(--ivory)}
+    .amt-main{font-family:'Barlow Condensed',sans-serif;font-size:4rem;font-weight:900;color:var(--black);line-height:1}
+    .amt-orig{font-size:1.1rem;font-weight:700;color:rgba(0,0,0,0.3);text-decoration:line-through}
+    .amt-save{font-size:0.75rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--red)}
+    .pricing-note{font-size:0.78rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .discount-banner{background:var(--cream);border:2px solid var(--yellow);padding:1rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+    .discount-banner p{font-size:0.9rem;font-weight:600;color:var(--black);line-height:1.5}
+    .discount-banner strong{color:var(--red);font-size:1rem}
+    .btn-buy{display:block;width:100%;font-size:0.9rem;font-weight:900;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);background:var(--yellow);padding:1.35rem;text-decoration:none;text-align:center;transition:all 0.2s;border:none;cursor:pointer}
+    .btn-buy:hover{background:var(--red);color:var(--white)}
+    .pricing-secure{display:flex;align-items:center;gap:0.75rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--gray)}
+    .pricing-secure svg{color:var(--red);flex-shrink:0}
+    .pricing-secure p{font-size:0.78rem;color:var(--text-muted);line-height:1.5}
+
+    /* FAQ */
+    .faq-list{max-width:720px;margin:3.5rem auto 0;display:flex;flex-direction:column;gap:2px;background:rgba(0,0,0,0.08)}
     .faq-item{background:var(--white)}
-    .faq-q{width:100%;background:none;border:none;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:1rem}
-    .faq-qt{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--charcoal)}
-    .faq-ico{color:var(--gold);flex-shrink:0;transition:transform 0.2s}
+    .faq-q{width:100%;background:none;border:none;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:1rem;transition:background 0.2s}
+    .faq-q:hover{background:var(--cream)}
+    .faq-qt{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:800;color:var(--black);text-transform:uppercase}
+    .faq-ico{color:var(--red);flex-shrink:0;transition:transform 0.2s}
     .faq-item.open .faq-ico{transform:rotate(45deg)}
-    .faq-ans{display:none;padding:0 2rem 1.5rem;font-size:0.88rem;line-height:1.8;color:var(--charcoal-soft);font-weight:300}
+    .faq-item.open .faq-q{background:var(--cream)}
+    .faq-ans{display:none;padding:0 2rem 1.5rem;font-size:0.9rem;line-height:1.8;color:var(--text-muted);background:var(--cream)}
     .faq-item.open .faq-ans{display:block}
-    footer{background:var(--charcoal);padding:3rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
-    .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;letter-spacing:0.12em;color:rgba(255,255,255,0.7)}
-    .footer-logo span{color:var(--gold-light);font-style:italic}
+
+    /* FOOTER */
+    footer{background:var(--black);padding:3rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-top:3px solid var(--red)}
+    .footer-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:900;letter-spacing:0.05em;color:var(--cream);text-transform:uppercase}
+    .footer-logo span{color:var(--yellow)}
     .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.3);letter-spacing:0.05em}
     .footer-links{display:flex;gap:1.5rem;list-style:none}
-    .footer-links a{font-size:0.75rem;color:rgba(255,255,255,0.35);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s}
-    .footer-links a:hover{color:var(--gold-light)}
-    .modal-ov{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.9);align-items:center;justify-content:center}
+    .footer-links a{font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.35);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
+    .footer-links a:hover{color:var(--yellow)}
+
+    /* MODAL */
+    .modal-ov{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.95);align-items:center;justify-content:center}
     .modal-inner{position:relative;width:90%;max-width:900px}
-    .modal-close{position:absolute;top:-44px;right:0;background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.55);font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:0.5rem;padding:0}
+    .modal-close{position:absolute;top:-44px;right:0;background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.6);font-size:0.72rem;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;font-family:'Barlow',sans-serif;display:flex;align-items:center;gap:0.5rem;padding:0}
     .modal-vid{position:relative;padding-bottom:56.25%}
     .modal-vid iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+
+    /* ANIMATIONS */
     @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-    .hero-content>*{opacity:0;animation:fadeUp 0.7s ease forwards}
+    .hero-content>*{opacity:0;animation:fadeUp 0.6s ease forwards}
     .hero-content>*:nth-child(1){animation-delay:0.1s}
     .hero-content>*:nth-child(2){animation-delay:0.2s}
     .hero-content>*:nth-child(3){animation-delay:0.3s}
     .hero-content>*:nth-child(4){animation-delay:0.4s}
     .hero-content>*:nth-child(5){animation-delay:0.5s}
     .hero-content>*:nth-child(6){animation-delay:0.6s}
-    @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:8rem}.hero-visual{display:none}.two-col{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr;gap:2px}.mod-grid{grid-template-columns:1fr}.prod-grid{grid-template-columns:1fr}.testi-grid{grid-template-columns:1fr}.numbers-bar{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}nav{padding:1rem 4%}}
-    @media(max-width:600px){.hero h1{font-size:2.5rem}.trust-bar{gap:1.5rem}.trust-item span{display:none}.numbers-bar{grid-template-columns:repeat(2,1fr)}}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .two-col{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:1fr;gap:3px}
+      .mod-grid{grid-template-columns:1fr}
+      .prod-grid{grid-template-columns:1fr}
+      .testi-grid{grid-template-columns:1fr}
+      .numbers-bar{grid-template-columns:repeat(2,1fr)}
+      .nav-links{display:none}
+      nav{padding:1rem 4%}
+    }
+    @media(max-width:600px){
+      .hero h1{font-size:3rem}
+      .trust-bar{gap:1.5rem}
+      .trust-item span{display:none}
+      .numbers-bar{grid-template-columns:repeat(2,1fr)}
+      .hero-sp{flex-wrap:wrap;gap:1rem}
+    }
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKRXFW78"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKRXFW78" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1463049405557753');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {content_name:'Curso Piano Completo',content_category:'Curso Digital',value:739,currency:'MXN'});
+</script>
 
 <nav>
   <a href="#" class="nav-logo">Clara <span>Luna</span></a>
@@ -180,13 +252,13 @@
     <li><a href="#precio">Precio</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" class="nav-cta" target="_blank" rel="noopener">Obtener el curso</a>
+  <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" class="nav-cta" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:739,currency:'MXN'})">Obtener el curso</a>
 </nav>
 
 <section class="hero">
   <div class="hero-content">
     <div class="hero-eyebrow">Clara Luna Piano Academy</div>
-    <h1>Aprende piano<br>desde <em>cero,</em><br>a tu ritmo</h1>
+    <h1>Aprende<br>piano<br><em>desde cero</em></h1>
     <p class="hero-sub">Método completo en PDF y video para principiantes. Aprende a leer partituras, tocar acordes y desarrollar independencia de manos — sin experiencia previa.</p>
     <div class="hero-sp">
       <div class="sp-item"><div class="sp-num">+6,000</div><div class="sp-lbl">Estudiantes</div></div>
@@ -198,23 +270,22 @@
       <div class="sp-item"><div class="sp-num">+7 hrs</div><div class="sp-lbl">Contenido</div></div>
     </div>
     <div class="price-block">
-      <span class="price-main">$739</span>
+      <span class="price-main">$739 MXN</span>
       <span class="price-orig">$1,848 MXN</span>
-      <span class="price-badge">código C60</span>
+      <span class="price-badge">60% OFF</span>
     </div>
     <div class="hero-actions">
-      <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" class="btn-primary" target="_blank" rel="noopener">Comenzar ahora</a>
-      <a href="#bienvenida" class="btn-ghost">Ver el curso <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" class="btn-primary" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:739,currency:'MXN'})">Obtener el curso ahora</a>
+      <a href="#bienvenida" class="btn-ghost">Ver el curso <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
   </div>
-
 </section>
 
 <div class="trust-bar">
-  <div class="trust-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><span>Acceso de por vida</span></div>
-  <div class="trust-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="12" height="9" rx="1"/><path d="M5 4V3a3 3 0 016 0v1"/></svg><span>Pago seguro con Stripe</span></div>
-  <div class="trust-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg><span>Descarga inmediata</span></div>
-  <div class="trust-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h12v8H2zM5 11v2M11 11v2M4 13h8"/></svg><span>100+ tutoriales en video</span></div>
+  <div class="trust-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><span>Acceso de por vida</span></div>
+  <div class="trust-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="12" height="9" rx="1"/><path d="M5 4V3a3 3 0 016 0v1"/></svg><span>Pago seguro</span></div>
+  <div class="trust-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg><span>Descarga inmediata</span></div>
+  <div class="trust-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h12v8H2zM5 11v2M11 11v2M4 13h8"/></svg><span>100+ tutoriales</span></div>
 </div>
 
 <div class="numbers-bar">
@@ -224,9 +295,9 @@
   <div class="num-card"><div class="num-val">100+</div><div class="num-lbl">Tutoriales incluidos</div></div>
 </div>
 
-<section style="background:var(--cream)" id="bienvenida">
+<section style="background:var(--gray)" id="bienvenida">
   <div class="sec-label">El curso</div>
-  <h2 class="sec-title">Conoce el método<br>antes de <em>decidir</em></h2>
+  <h2 class="sec-title">Conoce el método<br><em>antes de decidir</em></h2>
   <div class="two-col">
     <div class="vid-thumb" onclick="openModal('ROITv07HZHY')">
       <img src="https://img.youtube.com/vi/ROITv07HZHY/maxresdefault.jpg" alt="Clara Luna presenta el curso">
@@ -235,7 +306,7 @@
     <div>
       <div class="vid-tag">De Clara Luna para ti</div>
       <h3 class="vid-title">Todo lo que vas a aprender, explicado por mí</h3>
-      <p class="vid-desc">En este video te cuento exactamente qué contiene el curso, cómo está estructurado y qué vas a lograr al terminarlo. Sin sorpresas, sin letra chica.</p>
+      <p class="vid-desc">En este video te cuento exactamente qué contiene el curso, cómo está estructurado y qué vas a lograr al terminarlo. Sin sorpresas.</p>
       <div class="vid-stats">
         <div><div class="vs-num">9</div><div class="vs-lbl">Módulos</div></div>
         <div><div class="vs-num">+7 hrs</div><div class="vs-lbl">Contenido</div></div>
@@ -256,29 +327,29 @@
     <div>
       <div class="vid-tag">Lección del módulo 7</div>
       <h3 class="vid-title">Las notas musicales: pentagrama, claves de Sol y Fa</h3>
-      <p class="vid-desc">Una clase completa del módulo de lectura de partituras. Verás el estilo de enseñanza: conceptos claros, ejemplos visuales y ejercicios para practicar el mismo día.</p>
-      <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" class="btn-primary" target="_blank" rel="noopener">Quiero el curso completo</a>
+      <p class="vid-desc">Una clase completa del módulo de lectura de partituras. Conceptos claros, ejemplos visuales y ejercicios para practicar el mismo día.</p>
+      <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" class="btn-primary" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:739,currency:'MXN'})">Quiero el curso completo — $739 MXN</a>
     </div>
   </div>
 </section>
 
-<section style="background:var(--cream)">
+<section style="background:var(--gray)">
   <div class="sec-label">Por qué elegirnos</div>
   <h2 class="sec-title">Un método que<br><em>realmente funciona</em></h2>
   <div class="why-grid">
-    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="20" cy="20" r="16"/><path d="M20 12v8l5 5"/></svg><div class="why-title">A tu ritmo</div><p class="why-desc">Acceso de por vida. Estudia cuando quieras, repite las veces que necesites, sin fechas límite ni presión.</p></div>
-    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 30V16l12-8 12 8v14"/><rect x="15" y="20" width="10" height="10"/></svg><div class="why-title">Desde cero absoluto</div><p class="why-desc">No necesitas experiencia previa. El curso comienza desde los fundamentos más básicos.</p></div>
-    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="8" y="10" width="24" height="18" rx="2"/><path d="M14 28v4M26 28v4M10 32h20"/></svg><div class="why-title">Video + PDF</div><p class="why-desc">Cada tema tiene su guía en PDF y más de 100 tutoriales en video. Combina los dos formatos para aprender más rápido.</p></div>
-    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 20h16M12 26h10M20 8l8 8-8 8"/></svg><div class="why-title">Progresivo y estructurado</div><p class="why-desc">9 módulos ordenados de menor a mayor dificultad. Sin saltos ni lagunas.</p></div>
-    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="20" cy="28" rx="10" ry="4"/><path d="M14 28V16a6 6 0 0112 0v12"/></svg><div class="why-title">Tocarás 10 piezas</div><p class="why-desc">Al terminar habrás leído y tocado 10 piezas completas para piano, entendiendo la música en la práctica.</p></div>
-    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 12l6 6-6 6M20 24h12"/></svg><div class="why-title">Descarga inmediata</div><p class="why-desc">Al completar tu compra recibes todos los materiales en tu correo al instante.</p></div>
+    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="20" r="16"/><path d="M20 12v8l5 5"/></svg><div class="why-title">A tu ritmo</div><p class="why-desc">Acceso de por vida. Estudia cuando quieras, repite las veces que necesites, sin fechas límite.</p></div>
+    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 30V16l12-8 12 8v14"/><rect x="15" y="20" width="10" height="10"/></svg><div class="why-title">Desde cero absoluto</div><p class="why-desc">No necesitas experiencia previa. El curso comienza desde los fundamentos más básicos.</p></div>
+    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="10" width="24" height="18" rx="2"/><path d="M14 28v4M26 28v4M10 32h20"/></svg><div class="why-title">Video + PDF</div><p class="why-desc">Más de 100 tutoriales en video y guías PDF descargables. Aprende en el formato que prefieras.</p></div>
+    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h16M12 26h10M20 8l8 8-8 8"/></svg><div class="why-title">Progresivo y estructurado</div><p class="why-desc">9 módulos ordenados de menor a mayor dificultad. Sin saltos ni lagunas.</p></div>
+    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="20" cy="28" rx="10" ry="4"/><path d="M14 28V16a6 6 0 0112 0v12"/></svg><div class="why-title">Tocarás 10 piezas</div><p class="why-desc">Al terminar habrás tocado 10 piezas completas para piano, entendiendo la música en la práctica.</p></div>
+    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12l6 6-6 6M20 24h12"/></svg><div class="why-title">Descarga inmediata</div><p class="why-desc">Al completar tu compra recibes todos los materiales en tu correo al instante.</p></div>
   </div>
 </section>
 
 <section class="dark-section" id="contenido">
-  <div class="sec-label" style="color:rgba(184,147,58,0.8)">Plan de estudios</div>
-  <h2 class="sec-title">9 módulos,<br>un <em>camino claro</em></h2>
-  <p class="sec-intro">De los primeros sonidos a tocar 10 piezas completas. Cada módulo incluye tutoriales en video y material de estudio.</p>
+  <div class="sec-label" style="color:rgba(218,209,89,0.8)">Plan de estudios</div>
+  <h2 class="sec-title sec-title-white">9 módulos,<br><em>un camino claro</em></h2>
+  <p class="sec-intro" style="color:rgba(255,255,255,0.5)">De los primeros sonidos a tocar 10 piezas completas. Cada módulo incluye tutoriales en video y material de estudio.</p>
   <div class="mod-grid">
     <div class="mod-card"><div class="mod-num">01</div><div class="mod-title">Conceptos básicos</div><ul class="mod-topics"><li>El piano y las notas musicales</li><li>Componentes del sonido</li><li>Teoría musical inicial</li></ul></div>
     <div class="mod-card"><div class="mod-num">02</div><div class="mod-title">Intervalos</div><ul class="mod-topics"><li>Intervalos musicales</li><li>Alteración de notas</li><li>Práctica guiada</li></ul></div>
@@ -294,19 +365,19 @@
 
 <section>
   <div class="sec-label">Incluido en el paquete</div>
-  <h2 class="sec-title">Todo lo que<br>recibes al <em>comprar</em></h2>
+  <h2 class="sec-title">Todo lo que<br><em>recibes al comprar</em></h2>
   <p class="sec-intro">Cuatro productos en una sola compra. Los recibes inmediatamente en tu correo.</p>
   <div class="prod-grid">
     <div class="prod-card"><div class="prod-tag">Volumen I</div><div class="prod-name">Cómo tocar piano y leer partituras</div><div class="prod-fmt">Guía PDF + 100+ videos</div><ul class="prod-feats"><li>9 módulos completos</li><li>Más de 7 horas de contenido</li><li>Conceptos básicos hasta avanzado</li></ul></div>
-    <div class="prod-card"><div class="prod-tag">Volumen II</div><div class="prod-name">Cómo tocar piano y leer partituras</div><div class="prod-fmt">Guía PDF + videos</div><ul class="prod-feats"><li>Nivel intermedio–avanzado</li><li>Técnicas avanzadas de lectura</li><li>Material de estudio complementario</li></ul></div>
+    <div class="prod-card"><div class="prod-tag">Volumen II</div><div class="prod-name">Cómo tocar piano y leer partituras</div><div class="prod-fmt">Guía PDF + videos</div><ul class="prod-feats"><li>Nivel intermedio–avanzado</li><li>Técnicas avanzadas de lectura</li><li>Material complementario</li></ul></div>
     <div class="prod-card"><div class="prod-tag">Bonus I</div><div class="prod-name">30 ejercicios para coordinar ambas manos</div><div class="prod-fmt">Video tutorial</div><ul class="prod-feats"><li>30 ejercicios en video</li><li>Para principiantes</li><li>Práctica guiada paso a paso</li></ul></div>
     <div class="prod-card"><div class="prod-tag">Bonus II</div><div class="prod-name">30 ejercicios para coordinar ambas manos — Vol. 2</div><div class="prod-fmt">Video tutorial</div><ul class="prod-feats"><li>30 ejercicios adicionales</li><li>Nivel intermedio</li><li>Independencia avanzada de manos</li></ul></div>
   </div>
 </section>
 
-<section style="background:var(--cream)">
+<section style="background:var(--gray)">
   <div class="sec-label">Lo que dicen los estudiantes</div>
-  <h2 class="sec-title">+6,000 personas<br>ya <em>aprendieron</em></h2>
+  <h2 class="sec-title">+6,000 personas<br><em>ya aprendieron</em></h2>
   <div class="testi-grid">
     <div class="testi-card">
       <div class="stars"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg></div>
@@ -332,54 +403,56 @@
     </div>
     <div class="pricing-body">
       <ul class="pricing-items">
-        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5l2 2 4-4"/></svg></div>Vol. I — Guía PDF: Cómo tocar piano y leer partituras</li>
-        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5l2 2 4-4"/></svg></div>Vol. II — Guía PDF: Nivel intermedio–avanzado</li>
-        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5l2 2 4-4"/></svg></div>30 ejercicios de coordinación — Video principiante</li>
-        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5l2 2 4-4"/></svg></div>30 ejercicios de coordinación — Video intermedio</li>
-        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5l2 2 4-4"/></svg></div>+100 tutoriales en video · +7 horas de contenido</li>
-        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5l2 2 4-4"/></svg></div>Acceso de por vida — sin suscripciones</li>
+        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2 2 4-4"/></svg></div>Vol. I — Guía PDF: Cómo tocar piano y leer partituras</li>
+        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2 2 4-4"/></svg></div>Vol. II — Guía PDF: Nivel intermedio–avanzado</li>
+        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2 2 4-4"/></svg></div>30 ejercicios de coordinación — Video principiante</li>
+        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2 2 4-4"/></svg></div>30 ejercicios de coordinación — Video intermedio</li>
+        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2 2 4-4"/></svg></div>+100 tutoriales en video · +7 horas de contenido</li>
+        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2 2 4-4"/></svg></div>Acceso de por vida — sin suscripciones</li>
       </ul>
       <div class="amt-row">
-        <div class="amt-main">$739<span style="font-size:1.5rem"> MXN</span></div>
-        <div><div class="amt-orig">$1,848 MXN</div><div class="amt-save">Ahorras $1,108</div></div>
+        <div class="amt-main">$739 <span style="font-size:1.8rem">MXN</span></div>
+        <div><div class="amt-orig">$1,848 MXN</div><div class="amt-save">60% de descuento aplicado</div></div>
       </div>
-      <p class="pricing-note">Precio en pesos mexicanos.</p>
-      <div class="discount-box">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="var(--gold)" stroke-width="1.5" style="flex-shrink:0"><path d="M9 2H4a2 2 0 00-2 2v5l9 9 7-7-9-9z"/><circle cx="6.5" cy="6.5" r="1"/></svg>
-        <p>Al momento de pagar aplica el código <span class="dcode">C60</span> para obtener tu 60% de descuento en todos los productos.</p>
+      <p class="pricing-note">Precio en pesos mexicanos. El descuento ya está aplicado — no necesitas ningún código.</p>
+      <div class="discount-banner">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" style="flex-shrink:0"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        <p><strong>60% de descuento ya aplicado.</strong> El precio final es $739 MXN — sin códigos, sin pasos extra. Solo da clic y compra.</p>
       </div>
-      <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" class="btn-buy" target="_blank" rel="noopener">Obtener el curso — usar código C60 →</a>
+      <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" class="btn-buy" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:739,currency:'MXN'})">
+        Obtener el curso completo — $739 MXN →
+      </a>
       <div class="pricing-secure">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="8" width="14" height="10" rx="1"/><path d="M7 8V6a3 3 0 016 0v2"/></svg>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="14" height="10" rx="1"/><path d="M7 8V6a3 3 0 016 0v2"/></svg>
         <p>Pago 100% seguro con Stripe. Recibes tus materiales inmediatamente en tu correo al completar la compra.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section style="background:var(--cream)" id="faq">
+<section style="background:var(--gray)" id="faq">
   <div class="sec-label">Preguntas frecuentes</div>
-  <h2 class="sec-title" style="text-align:center">Todo lo que<br>necesitas <em>saber</em></h2>
+  <h2 class="sec-title" style="text-align:center">Todo lo que<br><em>necesitas saber</em></h2>
   <div class="faq-list">
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Necesito experiencia musical previa?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">No, en absoluto. El curso está diseñado para principiantes desde cero. No necesitas saber nada de música ni haber tocado un instrumento antes.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Es pago único o mensual?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Es un único pago. Una vez que compras tienes acceso de por vida a todos los materiales sin ningún cobro adicional.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Cómo recibo los materiales?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Inmediatamente después de tu compra recibes un email con los links de descarga de los 4 productos. Todo llega directo a tu correo.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Desde qué dispositivos puedo acceder?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Desde cualquier dispositivo: computadora, tablet o celular. También puedes descargar los archivos para acceder sin conexión.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Qué métodos de pago aceptan?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Tarjeta de crédito y débito a través de Stripe, la plataforma de pagos más segura del mundo.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Qué lograré al terminar el curso?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Habrás aprendido a leer partituras, entender conceptos musicales y tocar 10 piezas completas para piano.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Tengo que estudiar en horarios fijos?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">No. Las clases son grabadas y puedes verlas cuando quieras, a tu propio ritmo, cuantas veces necesites.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Necesito experiencia musical previa?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">No, en absoluto. El curso está diseñado para principiantes desde cero. No necesitas saber nada de música ni haber tocado un instrumento antes.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Es pago único o mensual?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Es un único pago. Una vez que compras tienes acceso de por vida a todos los materiales sin ningún cobro adicional.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Cómo recibo los materiales?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Inmediatamente después de tu compra recibes un email con los links de descarga de los 4 productos. Todo llega directo a tu correo en segundos.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Desde qué dispositivos puedo acceder?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Desde cualquier dispositivo: computadora, tablet o celular. También puedes descargar los archivos para acceder sin conexión.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Qué métodos de pago aceptan?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Tarjeta de crédito y débito a través de Stripe, la plataforma de pagos más segura del mundo.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Qué lograré al terminar el curso?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Habrás aprendido a leer partituras, entender conceptos musicales y tocar 10 piezas completas para piano.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Tengo que estudiar en horarios fijos?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">No. Las clases son grabadas y puedes verlas cuando quieras, a tu propio ritmo, cuantas veces necesites.</div></div>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo">Clara <span>Luna</span> Piano Academy</div>
-  <ul class="footer-links"><li><a href="mailto:cursos@pianoacademycl.com">Contacto</a></li></ul>
+  <ul class="footer-links"><li><a href="mailto:cursos@claraluna.online">Contacto</a></li></ul>
   <div class="footer-copy">© 2026 Clara Luna Piano Academy</div>
 </footer>
 
 <div id="videoModal" class="modal-ov" onclick="closeModal()">
   <div class="modal-inner" onclick="event.stopPropagation()">
-    <button class="modal-close" onclick="closeModal()"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l10 10M11 1L1 11"/></svg> Cerrar</button>
+    <button class="modal-close" onclick="closeModal()"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l10 10M11 1L1 11"/></svg> Cerrar</button>
     <div class="modal-vid"><iframe id="videoIframe" src="" allowfullscreen></iframe></div>
   </div>
 </div>
