@@ -1,467 +1,633 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WKRXFW78');</script>
-  <!-- End Google Tag Manager -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clara Luna Piano Academy — Aprende Piano desde Cero</title>
-  <meta name="description" content="Aprende piano clásico desde cero. +6,000 estudiantes. Método completo en PDF y video para principiantes.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piano Academy — Clara</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+  <!-- GTM -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WKRXFW78');</script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1142249788981896');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1142249788981896&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --cream:#fff4c6;
-      --red:#ff3d00;
-      --black:#1d1d1b;
-      --yellow:#dad159;
-      --white:#ffffff;
-      --gray:#f5f5f5;
-      --text-muted:#5a5a58;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #f7f1e4;
+      color: #2b2119;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.6;
     }
-    html{scroll-behavior:smooth}
-    body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden}
 
-    /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:var(--black);border-bottom:3px solid var(--red)}
-    .nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:0.05em;color:var(--cream);text-decoration:none;text-transform:uppercase}
-    .nav-logo span{color:var(--yellow)}
-    .nav-links{display:flex;gap:2rem;list-style:none}
-    .nav-links a{font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.2s}
-    .nav-links a:hover{color:var(--yellow)}
-    .nav-cta{font-size:0.75rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--black);background:var(--yellow);padding:0.6rem 1.5rem;text-decoration:none;transition:all 0.2s}
-    .nav-cta:hover{background:var(--red);color:var(--white)}
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .chev { transform: rotate(180deg); }
+    .chev { transition: transform .18s ease; display: inline-block; }
 
-    /* HERO */
-    .hero{min-height:100vh;display:flex;align-items:center;padding:8rem 5% 5rem;background:var(--black);position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,transparent 0%,rgba(218,209,89,0.06) 100%);pointer-events:none}
-    .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),var(--yellow),var(--red))}
-    .hero-content{max-width:780px}
-    .hero-eyebrow{font-size:0.75rem;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--yellow);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem}
-    .hero-eyebrow::before{content:'';display:block;width:32px;height:2px;background:var(--red)}
-    .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:900;line-height:0.95;letter-spacing:-0.01em;color:var(--white);margin-bottom:1.5rem;text-transform:uppercase}
-    .hero h1 em{font-style:italic;color:var(--yellow);display:block}
-    .hero-sub{font-size:1.1rem;font-weight:400;line-height:1.7;color:rgba(255,255,255,0.65);max-width:540px;margin-bottom:2rem}
-    .hero-sp{display:flex;align-items:center;gap:1.5rem;margin-bottom:2.5rem;padding:1.25rem 1.5rem;background:rgba(255,255,255,0.05);border-left:3px solid var(--red)}
-    .sp-item{text-align:center}
-    .sp-num{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;color:var(--yellow);line-height:1}
-    .sp-lbl{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
-    .sp-div{width:1px;height:36px;background:rgba(255,255,255,0.1)}
-    .price-block{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
-    .price-main{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:900;color:var(--white);line-height:1}
-    .price-orig{font-size:1.1rem;font-weight:600;color:rgba(255,255,255,0.35);text-decoration:line-through}
-    .price-badge{font-size:0.75rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;background:var(--red);color:var(--white);padding:0.4rem 1rem}
-    .hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
-    .btn-primary{font-size:0.85rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--black);background:var(--yellow);padding:1.1rem 2.5rem;text-decoration:none;display:inline-block;transition:all 0.2s}
-    .btn-primary:hover{background:var(--red);color:var(--white)}
-    .btn-ghost{font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.2s}
-    .btn-ghost:hover{color:var(--yellow)}
-
-    /* TRUST BAR */
-    .trust-bar{background:var(--red);padding:1rem 5%;display:flex;justify-content:center;align-items:center;gap:3rem;flex-wrap:wrap}
-    .trust-item{display:flex;align-items:center;gap:0.6rem;color:rgba(255,255,255,0.9);font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
-
-    /* NUMBERS */
-    .numbers-bar{background:var(--cream);display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background-color:rgba(0,0,0,0.1)}
-    .num-card{background:var(--cream);padding:2.5rem 2rem;text-align:center}
-    .num-val{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:900;color:var(--black);line-height:1;margin-bottom:0.25rem}
-    .num-lbl{font-size:0.72rem;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted)}
-
-    /* SECTIONS */
-    section{padding:6rem 5%}
-    .sec-label{font-size:0.68rem;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem}
-    .sec-label::after{content:'';flex:1;max-width:40px;height:2px;background:var(--red)}
-    .sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,4vw,3.8rem);font-weight:900;line-height:1;color:var(--black);margin-bottom:1rem;text-transform:uppercase}
-    .sec-title em{font-style:italic;color:var(--red)}
-    .sec-title-white{color:var(--white)}
-    .sec-title-white em{color:var(--yellow)}
-    .sec-intro{font-size:1rem;font-weight:400;line-height:1.8;color:var(--text-muted);max-width:580px}
-
-    /* VIDEO */
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem}
-    .vid-thumb{position:relative;padding-bottom:56.25%;background:var(--black);overflow:hidden;cursor:pointer}
-    .vid-thumb img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.75;transition:opacity 0.3s}
-    .vid-thumb:hover img{opacity:0.9}
-    .play-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
-    .play-circle{width:72px;height:72px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform 0.2s}
-    .vid-thumb:hover .play-circle{transform:scale(1.08)}
-    .play-lbl{font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.9)}
-    .vid-tag{font-size:0.68rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:0.75rem}
-    .vid-title{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:800;line-height:1.1;color:var(--black);margin-bottom:1rem;text-transform:uppercase}
-    .vid-desc{font-size:0.95rem;line-height:1.8;color:var(--text-muted);margin-bottom:2rem}
-    .vid-stats{display:flex;gap:2rem}
-    .vs-num{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;color:var(--black)}
-    .vs-lbl{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted)}
-
-    /* WHY */
-    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:3.5rem;background:rgba(0,0,0,0.08)}
-    .why-card{background:var(--gray);padding:2.5rem 2rem;transition:background 0.2s}
-    .why-card:hover{background:var(--cream)}
-    .why-icon{width:40px;height:40px;margin-bottom:1.5rem;color:var(--red)}
-    .why-title{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;color:var(--black);margin-bottom:0.75rem;text-transform:uppercase}
-    .why-desc{font-size:0.88rem;line-height:1.8;color:var(--text-muted)}
-
-    /* CURRICULUM */
-    .dark-section{background:var(--black)}
-    .mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:3.5rem;background:rgba(255,255,255,0.06)}
-    .mod-card{background:var(--black);padding:2rem;transition:background 0.2s;border-left:3px solid transparent}
-    .mod-card:hover{background:#2a2a28;border-left-color:var(--red)}
-    .mod-num{font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:900;color:rgba(218,209,89,0.2);line-height:1;margin-bottom:0.75rem}
-    .mod-title{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:800;color:var(--white);margin-bottom:0.5rem;text-transform:uppercase}
-    .mod-topics{list-style:none;display:flex;flex-direction:column;gap:0.25rem}
-    .mod-topics li{font-size:0.78rem;color:rgba(255,255,255,0.35);padding-left:0.75rem;position:relative}
-    .mod-topics li::before{content:'—';position:absolute;left:0;color:rgba(255,61,0,0.5)}
-
-    /* INCLUDED */
-    .prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:3.5rem;background:rgba(0,0,0,0.08)}
-    .prod-card{background:var(--white);padding:2rem;transition:all 0.2s;border-top:3px solid transparent}
-    .prod-card:hover{background:var(--cream);border-top-color:var(--red)}
-    .prod-tag{font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;background:var(--black);color:var(--yellow);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:0.75rem}
-    .prod-name{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:800;color:var(--black);margin-bottom:0.4rem;line-height:1.2;text-transform:uppercase}
-    .prod-fmt{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:1rem}
-    .prod-feats{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
-    .prod-feats li{font-size:0.82rem;color:var(--text-muted);display:flex;align-items:flex-start;gap:0.5rem}
-    .prod-feats li::before{content:'—';color:var(--red);flex-shrink:0}
-
-    /* TESTIMONIALS */
-    .testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:3.5rem;background:rgba(0,0,0,0.08)}
-    .testi-card{background:var(--white);padding:2rem;transition:background 0.2s}
-    .testi-card:hover{background:var(--cream)}
-    .stars{display:flex;gap:0.25rem;margin-bottom:1rem;color:var(--red)}
-    .testi-text{font-size:1rem;font-weight:400;font-style:italic;line-height:1.7;color:var(--black);margin-bottom:1.25rem}
-    .testi-author{display:flex;align-items:center;gap:0.75rem}
-    .testi-avatar{width:36px;height:36px;background:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:900;color:var(--yellow);flex-shrink:0}
-    .testi-name{font-size:0.85rem;font-weight:700;color:var(--black)}
-    .testi-ver{font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red)}
-
-    /* PRICING */
-    .pricing-wrap{max-width:680px;margin:3.5rem auto 0;background:var(--white);border:3px solid var(--black);position:relative}
-    .pricing-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--red),var(--yellow),var(--red))}
-    .pricing-head{padding:2.5rem 2.5rem 2rem;border-bottom:2px solid var(--gray)}
-    .pricing-lbl{font-size:0.68rem;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);margin-bottom:1rem}
-    .pricing-ttl{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:900;color:var(--black);margin-bottom:0.5rem;text-transform:uppercase}
-    .pricing-sub{font-size:0.88rem;color:var(--text-muted)}
-    .pricing-body{padding:2rem 2.5rem}
-    .pricing-items{list-style:none;display:flex;flex-direction:column;gap:0.9rem;margin-bottom:2rem}
-    .pricing-items li{font-size:0.88rem;color:var(--black);display:flex;align-items:center;gap:0.75rem;font-weight:500}
-    .chk{width:20px;height:20px;background:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--yellow)}
-    .amt-row{display:flex;align-items:baseline;gap:1rem;margin-bottom:0.5rem}
-    .amt-main{font-family:'Barlow Condensed',sans-serif;font-size:4rem;font-weight:900;color:var(--black);line-height:1}
-    .amt-orig{font-size:1.1rem;font-weight:700;color:rgba(0,0,0,0.3);text-decoration:line-through}
-    .amt-save{font-size:0.75rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--red)}
-    .pricing-note{font-size:0.78rem;color:var(--text-muted);margin-bottom:1.5rem}
-    .discount-banner{background:var(--cream);border:2px solid var(--yellow);padding:1rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
-    .discount-banner p{font-size:0.9rem;font-weight:600;color:var(--black);line-height:1.5}
-    .discount-banner strong{color:var(--red);font-size:1rem}
-    .btn-buy{display:block;width:100%;font-size:0.9rem;font-weight:900;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);background:var(--yellow);padding:1.35rem;text-decoration:none;text-align:center;transition:all 0.2s;border:none;cursor:pointer}
-    .btn-buy:hover{background:var(--red);color:var(--white)}
-    .pricing-secure{display:flex;align-items:center;gap:0.75rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--gray)}
-    .pricing-secure svg{color:var(--red);flex-shrink:0}
-    .pricing-secure p{font-size:0.78rem;color:var(--text-muted);line-height:1.5}
-
-    /* FAQ */
-    .faq-list{max-width:720px;margin:3.5rem auto 0;display:flex;flex-direction:column;gap:2px;background:rgba(0,0,0,0.08)}
-    .faq-item{background:var(--white)}
-    .faq-q{width:100%;background:none;border:none;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:1rem;transition:background 0.2s}
-    .faq-q:hover{background:var(--cream)}
-    .faq-qt{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:800;color:var(--black);text-transform:uppercase}
-    .faq-ico{color:var(--red);flex-shrink:0;transition:transform 0.2s}
-    .faq-item.open .faq-ico{transform:rotate(45deg)}
-    .faq-item.open .faq-q{background:var(--cream)}
-    .faq-ans{display:none;padding:0 2rem 1.5rem;font-size:0.9rem;line-height:1.8;color:var(--text-muted);background:var(--cream)}
-    .faq-item.open .faq-ans{display:block}
-
-    /* FOOTER */
-    footer{background:var(--black);padding:3rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-top:3px solid var(--red)}
-    .footer-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:900;letter-spacing:0.05em;color:var(--cream);text-transform:uppercase}
-    .footer-logo span{color:var(--yellow)}
-    .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.3);letter-spacing:0.05em}
-    .footer-links{display:flex;gap:1.5rem;list-style:none}
-    .footer-links a{font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.35);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
-    .footer-links a:hover{color:var(--yellow)}
-
-    /* MODAL */
-    .modal-ov{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.95);align-items:center;justify-content:center}
-    .modal-inner{position:relative;width:90%;max-width:900px}
-    .modal-close{position:absolute;top:-44px;right:0;background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.6);font-size:0.72rem;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;font-family:'Barlow',sans-serif;display:flex;align-items:center;gap:0.5rem;padding:0}
-    .modal-vid{position:relative;padding-bottom:56.25%}
-    .modal-vid iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-
-    /* ANIMATIONS */
-    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-    .hero-content>*{opacity:0;animation:fadeUp 0.6s ease forwards}
-    .hero-content>*:nth-child(1){animation-delay:0.1s}
-    .hero-content>*:nth-child(2){animation-delay:0.2s}
-    .hero-content>*:nth-child(3){animation-delay:0.3s}
-    .hero-content>*:nth-child(4){animation-delay:0.4s}
-    .hero-content>*:nth-child(5){animation-delay:0.5s}
-    .hero-content>*:nth-child(6){animation-delay:0.6s}
-
-    /* RESPONSIVE */
-    @media(max-width:900px){
-      .two-col{grid-template-columns:1fr}
-      .why-grid{grid-template-columns:1fr;gap:3px}
-      .mod-grid{grid-template-columns:1fr}
-      .prod-grid{grid-template-columns:1fr}
-      .testi-grid{grid-template-columns:1fr}
-      .numbers-bar{grid-template-columns:repeat(2,1fr)}
-      .nav-links{display:none}
-      nav{padding:1rem 4%}
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 22px clamp(20px, 4vw, 60px);
+      border-bottom: 1px solid rgba(109,31,44,0.18);
     }
-    @media(max-width:600px){
-      .hero h1{font-size:3rem}
-      .trust-bar{gap:1.5rem}
-      .trust-item span{display:none}
-      .numbers-bar{grid-template-columns:repeat(2,1fr)}
-      .hero-sp{flex-wrap:wrap;gap:1rem}
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 0.01em;
+      margin-right: auto;
     }
+    nav a {
+      color: #2b2119;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .btn-nav {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f7f1e4;
+      background: #6d1f2c;
+      padding: 11px 22px;
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      nav a:not(.btn-nav) { display: none; }
+    }
+
+    /* ── WRAP ── */
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 60px);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 88px 0 72px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; padding: 48px 0 40px; }
+      .hero figure { order: -1; }
+    }
+    .hero-eyebrow {
+      display: block;
+      font-size: 14px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #a9793a;
+      margin-bottom: 20px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(40px, 5.2vw, 68px);
+      line-height: 1.08;
+      letter-spacing: 0.005em;
+    }
+    .hero h1 em { font-style: italic; color: #6d1f2c; }
+    .hero-sub {
+      font-size: 19px;
+      line-height: 1.7;
+      max-width: 48ch;
+      margin: 26px 0 0;
+      color: rgba(43,33,25,0.72);
+    }
+    .hero-cta {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+    .btn-primary {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #f7f1e4;
+      background: #6d1f2c;
+      padding: 17px 40px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background .18s;
+    }
+    .btn-primary:hover { background: #8a2636; }
+    .price-inline { font-size: 17px; color: rgba(43,33,25,0.68); }
+    .price-inline strong { color: #2b2119; }
+    .hero figure {
+      margin: 0;
+      border: 1px solid #c9a24b;
+      padding: 10px;
+    }
+    .hero figure img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 220px;
+      margin: 0 auto 8px;
+    }
+    .divider span:first-child,
+    .divider span:last-child { flex: 1; height: 1px; background: #c9a24b; }
+    .divider .diamond {
+      width: 7px; height: 7px;
+      background: #c9a24b;
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* ── STATS ── */
+    .stats {
+      border-top: 1px solid #c9a24b;
+      border-bottom: 1px solid #c9a24b;
+      padding: 32px 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      margin: 0 0 56px;
+    }
+    @media (max-width: 600px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stats > div { border-left: none !important; border-top: 1px solid rgba(169,121,58,0.35); }
+      .stats > div:nth-child(1), .stats > div:nth-child(2) { border-top: none; }
+    }
+    .stats > div + div { border-left: 1px solid rgba(169,121,58,0.35); }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 38px;
+      color: #6d1f2c;
+    }
+    .stat-label {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(43,33,25,0.6);
+      margin-top: 6px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* ── CURSO ── */
+    .section-header { text-align: center; margin-bottom: 40px; }
+    .section-eyebrow {
+      display: block;
+      font-size: 14px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #a9793a;
+      margin-bottom: 14px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(30px, 3.2vw, 46px);
+    }
+    .section-header h2 em { font-style: italic; color: #6d1f2c; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-bottom: 44px;
+    }
+    @media (max-width: 900px) { .features { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .features { grid-template-columns: 1fr; } }
+    .feature-card {
+      border: 1px solid rgba(109,31,44,0.22);
+      padding: 28px;
+      text-align: center;
+    }
+    .feature-card.highlight {
+      border-color: #6d1f2c;
+      background: rgba(109,31,44,0.05);
+    }
+    .feature-num {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 28px;
+      color: #a9793a;
+    }
+    .feature-card.highlight .feature-num { color: #6d1f2c; }
+    .feature-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 19px;
+      margin: 10px 0 0;
+    }
+    .feature-card p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 8px 0 0;
+      color: rgba(43,33,25,0.68);
+    }
+
+    .modulos-label {
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a9793a;
+      margin: 0 0 16px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .modulos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 72px;
+    }
+    .modulo {
+      font-size: 15px;
+      color: #2b2119;
+      border: 1px solid rgba(109,31,44,0.3);
+      padding: 7px 16px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .modulo.active {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #f7f1e4;
+      background: #6d1f2c;
+      border-color: #6d1f2c;
+    }
+
+    /* ── TESTIMONIAL ── */
+    .testimonial-section {
+      padding: 64px 0;
+      text-align: center;
+      border-top: 1px solid #c9a24b;
+    }
+    blockquote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(22px, 2.6vw, 32px);
+      line-height: 1.5;
+      max-width: 44ch;
+      margin: 0 auto;
+    }
+    figcaption {
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #a9793a;
+      margin: 24px 0 0;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* ── PRECIO ── */
+    .precio-section { padding: 64px 0 72px; }
+    .precio-box {
+      max-width: 620px;
+      margin: 0 auto;
+      border: 1px solid #c9a24b;
+    }
+    .precio-box-header {
+      padding: 28px 36px;
+      border-bottom: 1px solid rgba(169,121,58,0.35);
+    }
+    .precio-box-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 24px;
+      margin: 0 0 6px;
+    }
+    .precio-box-header p {
+      font-size: 16px;
+      margin: 0;
+      color: rgba(43,33,25,0.68);
+    }
+    .precio-box-body { padding: 32px 36px; }
+    .precio-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 0 0 30px;
+      padding: 0;
+    }
+    .precio-list li {
+      font-size: 16px;
+      padding-left: 26px;
+      position: relative;
+    }
+    .precio-list li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: #a9793a;
+      font-size: 10px;
+      top: 4px;
+    }
+    .precio-amount {
+      display: flex;
+      align-items: baseline;
+      gap: 18px;
+      margin-bottom: 8px;
+    }
+    .precio-big {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 52px;
+      color: #6d1f2c;
+    }
+    .precio-big span { font-size: 24px; font-weight: 500; }
+    .precio-tachado { font-size: 16px; color: rgba(43,33,25,0.4); text-decoration: line-through; }
+    .precio-descuento {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #a9793a;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .precio-nota { font-size: 14px; color: rgba(43,33,25,0.65); margin: 0 0 26px; }
+    .btn-block {
+      display: block;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #f7f1e4;
+      background: #6d1f2c;
+      padding: 19px;
+      text-decoration: none;
+      transition: background .18s;
+    }
+    .btn-block:hover { background: #8a2636; }
+    .precio-seguro {
+      text-align: center;
+      font-size: 14px;
+      color: rgba(43,33,25,0.6);
+      margin: 18px 0 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(169,121,58,0.3);
+    }
+
+    /* ── FAQ ── */
+    .faq-section { padding: 0 0 72px; }
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(169,121,58,0.35);
+    }
+    .faq-list details {
+      border-bottom: 1px solid rgba(169,121,58,0.35);
+    }
+    .faq-list summary {
+      padding: 22px 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-list summary span:first-child {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 19px;
+    }
+    .faq-list summary .chev { color: #a9793a; font-size: 18px; flex-shrink: 0; }
+    .faq-list p {
+      margin: 0;
+      padding: 0 4px 22px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(43,33,25,0.7);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid rgba(109,31,44,0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 14px;
+      color: rgba(43,33,25,0.55);
+    }
+    footer .brand { font-family: 'Playfair Display', serif; }
+    footer .brand em { font-style: italic; color: #6d1f2c; }
+    footer a { color: inherit; }
   </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
+<!-- GTM noscript -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKRXFW78" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1463049405557753');
-fbq('track', 'PageView');
-fbq('track', 'ViewContent', {content_name:'Curso Piano Completo',content_category:'Curso Digital',value:739,currency:'MXN'});
-</script>
-
+<!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">Clara <span>Luna</span></a>
-  <ul class="nav-links">
-    <li><a href="#bienvenida">El curso</a></li>
-    <li><a href="#contenido">Contenido</a></li>
-    <li><a href="#precio">Precio</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
-  <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" class="nav-cta" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:739,currency:'MXN'})">Obtener el curso</a>
+  <span class="nav-brand">Piano Academy <em style="font-style:italic;color:#6d1f2c">— Clara</em></span>
+  <a href="#curso">Curso</a>
+  <a href="#precio">Precio</a>
+  <a href="#faq">Preguntas</a>
+  <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout',{value:739,currency:'MXN'})" class="btn-nav">Inscribirme</a>
 </nav>
 
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow">Clara Luna Piano Academy</div>
-    <h1>Aprende<br>piano<br><em>desde cero</em></h1>
-    <p class="hero-sub">Método completo en PDF y video para principiantes. Aprende a leer partituras, tocar acordes y desarrollar independencia de manos — sin experiencia previa.</p>
-    <div class="hero-sp">
-      <div class="sp-item"><div class="sp-num">+6,000</div><div class="sp-lbl">Estudiantes</div></div>
-      <div class="sp-div"></div>
-      <div class="sp-item"><div class="sp-num">+500K</div><div class="sp-lbl">Seguidores</div></div>
-      <div class="sp-div"></div>
-      <div class="sp-item"><div class="sp-num">9</div><div class="sp-lbl">Módulos</div></div>
-      <div class="sp-div"></div>
-      <div class="sp-item"><div class="sp-num">+7 hrs</div><div class="sp-lbl">Contenido</div></div>
-    </div>
-    <div class="price-block">
-      <span class="price-main">$739 MXN</span>
-      <span class="price-orig">$1,848 MXN</span>
-      <span class="price-badge">60% OFF</span>
-    </div>
-    <div class="hero-actions">
-      <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" class="btn-primary" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:739,currency:'MXN'})">Obtener el curso ahora</a>
-      <a href="#bienvenida" class="btn-ghost">Ver el curso <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div>
-  </div>
-</section>
+<div class="wrap">
 
-<div class="trust-bar">
-  <div class="trust-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><span>Acceso de por vida</span></div>
-  <div class="trust-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="12" height="9" rx="1"/><path d="M5 4V3a3 3 0 016 0v1"/></svg><span>Pago seguro</span></div>
-  <div class="trust-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg><span>Descarga inmediata</span></div>
-  <div class="trust-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h12v8H2zM5 11v2M11 11v2M4 13h8"/></svg><span>100+ tutoriales</span></div>
-</div>
-
-<div class="numbers-bar">
-  <div class="num-card"><div class="num-val">+6,000</div><div class="num-lbl">Estudiantes en el mundo</div></div>
-  <div class="num-card"><div class="num-val">+500K</div><div class="num-lbl">Seguidores en redes</div></div>
-  <div class="num-card"><div class="num-val">+7 hrs</div><div class="num-lbl">Contenido en video</div></div>
-  <div class="num-card"><div class="num-val">100+</div><div class="num-lbl">Tutoriales incluidos</div></div>
-</div>
-
-<section style="background:var(--gray)" id="bienvenida">
-  <div class="sec-label">El curso</div>
-  <h2 class="sec-title">Conoce el método<br><em>antes de decidir</em></h2>
-  <div class="two-col">
-    <div class="vid-thumb" onclick="openModal('ROITv07HZHY')">
-      <img src="https://img.youtube.com/vi/ROITv07HZHY/maxresdefault.jpg" alt="Clara Luna presenta el curso">
-      <div class="play-overlay"><div class="play-circle"><svg width="28" height="28" viewBox="0 0 28 28" fill="white"><path d="M10 8l14 6-14 6V8z"/></svg></div><span class="play-lbl">Ver presentación del curso</span></div>
-    </div>
+  <!-- HERO -->
+  <section class="hero">
     <div>
-      <div class="vid-tag">De Clara Luna para ti</div>
-      <h3 class="vid-title">Todo lo que vas a aprender, explicado por mí</h3>
-      <p class="vid-desc">En este video te cuento exactamente qué contiene el curso, cómo está estructurado y qué vas a lograr al terminarlo. Sin sorpresas.</p>
-      <div class="vid-stats">
-        <div><div class="vs-num">9</div><div class="vs-lbl">Módulos</div></div>
-        <div><div class="vs-num">+7 hrs</div><div class="vs-lbl">Contenido</div></div>
-        <div><div class="vs-num">100+</div><div class="vs-lbl">Tutoriales</div></div>
+      <span class="hero-eyebrow">Un método para toda la vida</span>
+      <h1>Toca piano<br><em>y lee partituras</em></h1>
+      <p class="hero-sub">Un método progresivo para adultos desde cero. Sin atajos — con teoría real, para que lo que aprendas te dure toda la vida.</p>
+      <div class="hero-cta">
+        <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout',{value:739,currency:'MXN'})" class="btn-primary">Comenzar ahora</a>
+        <span class="price-inline"><strong>$739 MXN</strong> · pago único</span>
       </div>
     </div>
-  </div>
-</section>
+    <figure>
+      <img src="carla.jpg" alt="Clara tocando el piano">
+    </figure>
+  </section>
 
-<section id="leccion">
-  <div class="sec-label">Lección de muestra</div>
-  <h2 class="sec-title">Prueba una clase<br><em>gratis</em></h2>
-  <div class="two-col">
-    <div class="vid-thumb" onclick="openModal('uBQQpgTXkFo')">
-      <img src="https://img.youtube.com/vi/uBQQpgTXkFo/maxresdefault.jpg" alt="Las notas musicales">
-      <div class="play-overlay"><div class="play-circle"><svg width="28" height="28" viewBox="0 0 28 28" fill="white"><path d="M10 8l14 6-14 6V8z"/></svg></div><span class="play-lbl">Ver lección completa</span></div>
+  <!-- DIVIDER -->
+  <div class="divider"><span></span><span class="diamond"></span><span></span></div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div><div class="stat-num">+6,000</div><div class="stat-label">Estudiantes</div></div>
+    <div><div class="stat-num">9</div><div class="stat-label">Módulos</div></div>
+    <div><div class="stat-num">+7 hrs</div><div class="stat-label">Contenido</div></div>
+    <div><div class="stat-num">10</div><div class="stat-label">Piezas al final</div></div>
+  </div>
+
+  <!-- CURSO -->
+  <section id="curso" style="padding: 0 0 64px">
+    <div class="section-header">
+      <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
+      <span class="section-eyebrow">El curso</span>
+      <h2>9 módulos, <em>una lógica clara</em></h2>
     </div>
-    <div>
-      <div class="vid-tag">Lección del módulo 7</div>
-      <h3 class="vid-title">Las notas musicales: pentagrama, claves de Sol y Fa</h3>
-      <p class="vid-desc">Una clase completa del módulo de lectura de partituras. Conceptos claros, ejemplos visuales y ejercicios para practicar el mismo día.</p>
-      <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" class="btn-primary" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:739,currency:'MXN'})">Quiero el curso completo — $739 MXN</a>
-    </div>
-  </div>
-</section>
 
-<section style="background:var(--gray)">
-  <div class="sec-label">Por qué elegirnos</div>
-  <h2 class="sec-title">Un método que<br><em>realmente funciona</em></h2>
-  <div class="why-grid">
-    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="20" r="16"/><path d="M20 12v8l5 5"/></svg><div class="why-title">A tu ritmo</div><p class="why-desc">Acceso de por vida. Estudia cuando quieras, repite las veces que necesites, sin fechas límite.</p></div>
-    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 30V16l12-8 12 8v14"/><rect x="15" y="20" width="10" height="10"/></svg><div class="why-title">Desde cero absoluto</div><p class="why-desc">No necesitas experiencia previa. El curso comienza desde los fundamentos más básicos.</p></div>
-    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="10" width="24" height="18" rx="2"/><path d="M14 28v4M26 28v4M10 32h20"/></svg><div class="why-title">Video + PDF</div><p class="why-desc">Más de 100 tutoriales en video y guías PDF descargables. Aprende en el formato que prefieras.</p></div>
-    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h16M12 26h10M20 8l8 8-8 8"/></svg><div class="why-title">Progresivo y estructurado</div><p class="why-desc">9 módulos ordenados de menor a mayor dificultad. Sin saltos ni lagunas.</p></div>
-    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="20" cy="28" rx="10" ry="4"/><path d="M14 28V16a6 6 0 0112 0v12"/></svg><div class="why-title">Tocarás 10 piezas</div><p class="why-desc">Al terminar habrás tocado 10 piezas completas para piano, entendiendo la música en la práctica.</p></div>
-    <div class="why-card"><svg class="why-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12l6 6-6 6M20 24h12"/></svg><div class="why-title">Descarga inmediata</div><p class="why-desc">Al completar tu compra recibes todos los materiales en tu correo al instante.</p></div>
-  </div>
-</section>
-
-<section class="dark-section" id="contenido">
-  <div class="sec-label" style="color:rgba(218,209,89,0.8)">Plan de estudios</div>
-  <h2 class="sec-title sec-title-white">9 módulos,<br><em>un camino claro</em></h2>
-  <p class="sec-intro" style="color:rgba(255,255,255,0.5)">De los primeros sonidos a tocar 10 piezas completas. Cada módulo incluye tutoriales en video y material de estudio.</p>
-  <div class="mod-grid">
-    <div class="mod-card"><div class="mod-num">01</div><div class="mod-title">Conceptos básicos</div><ul class="mod-topics"><li>El piano y las notas musicales</li><li>Componentes del sonido</li><li>Teoría musical inicial</li></ul></div>
-    <div class="mod-card"><div class="mod-num">02</div><div class="mod-title">Intervalos</div><ul class="mod-topics"><li>Intervalos musicales</li><li>Alteración de notas</li><li>Práctica guiada</li></ul></div>
-    <div class="mod-card"><div class="mod-num">03</div><div class="mod-title">Acordes</div><ul class="mod-topics"><li>Tipos de acordes</li><li>Inversión de acordes</li><li>Práctica aplicada</li></ul></div>
-    <div class="mod-card"><div class="mod-num">04</div><div class="mod-title">Escalas</div><ul class="mod-topics"><li>Escalas mayores y menores</li><li>El círculo de quintas</li><li>Las armaduras</li></ul></div>
-    <div class="mod-card"><div class="mod-num">05</div><div class="mod-title">Funciones y Grados</div><ul class="mod-topics"><li>Los grados musicales</li><li>Las funciones armónicas</li><li>Práctica aplicada</li></ul></div>
-    <div class="mod-card"><div class="mod-num">06</div><div class="mod-title">Ritmo y Compás</div><ul class="mod-topics"><li>Figuras rítmicas</li><li>El compás</li><li>Práctica rítmica</li></ul></div>
-    <div class="mod-card"><div class="mod-num">07</div><div class="mod-title">Análisis musical</div><ul class="mod-topics"><li>Analizando piezas</li><li>Práctica de análisis</li></ul></div>
-    <div class="mod-card"><div class="mod-num">08</div><div class="mod-title">Leer al piano</div><ul class="mod-topics"><li>Clave de Sol y Fa</li><li>Ejercicios de lectura</li></ul></div>
-    <div class="mod-card"><div class="mod-num">09</div><div class="mod-title">Tocando piezas</div><ul class="mod-topics"><li>10 piezas completas</li><li>De principiante a experto</li></ul></div>
-  </div>
-</section>
-
-<section>
-  <div class="sec-label">Incluido en el paquete</div>
-  <h2 class="sec-title">Todo lo que<br><em>recibes al comprar</em></h2>
-  <p class="sec-intro">Cuatro productos en una sola compra. Los recibes inmediatamente en tu correo.</p>
-  <div class="prod-grid">
-    <div class="prod-card"><div class="prod-tag">Volumen I</div><div class="prod-name">Cómo tocar piano y leer partituras</div><div class="prod-fmt">Guía PDF + 100+ videos</div><ul class="prod-feats"><li>9 módulos completos</li><li>Más de 7 horas de contenido</li><li>Conceptos básicos hasta avanzado</li></ul></div>
-    <div class="prod-card"><div class="prod-tag">Volumen II</div><div class="prod-name">Cómo tocar piano y leer partituras</div><div class="prod-fmt">Guía PDF + videos</div><ul class="prod-feats"><li>Nivel intermedio–avanzado</li><li>Técnicas avanzadas de lectura</li><li>Material complementario</li></ul></div>
-    <div class="prod-card"><div class="prod-tag">Bonus I</div><div class="prod-name">30 ejercicios para coordinar ambas manos</div><div class="prod-fmt">Video tutorial</div><ul class="prod-feats"><li>30 ejercicios en video</li><li>Para principiantes</li><li>Práctica guiada paso a paso</li></ul></div>
-    <div class="prod-card"><div class="prod-tag">Bonus II</div><div class="prod-name">30 ejercicios para coordinar ambas manos — Vol. 2</div><div class="prod-fmt">Video tutorial</div><ul class="prod-feats"><li>30 ejercicios adicionales</li><li>Nivel intermedio</li><li>Independencia avanzada de manos</li></ul></div>
-  </div>
-</section>
-
-<section style="background:var(--gray)">
-  <div class="sec-label">Lo que dicen los estudiantes</div>
-  <h2 class="sec-title">+6,000 personas<br><em>ya aprendieron</em></h2>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <div class="stars"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg></div>
-      <p class="testi-text">"Este curso me parece excelente puesto que las clases son muy amenas, tiene excelentes bases, se entiende muy bien porque la forma de la explicación es apta para cualquier persona que quiera aprender. En lo personal me ayuda bastante para entender mejor la música."</p>
-      <div class="testi-author"><div class="testi-avatar">F</div><div><div class="testi-name">Fabian Sanchez</div><div class="testi-ver">✓ Compra verificada</div></div></div>
-    </div>
-    <div class="testi-card">
-      <div class="stars"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.45l-3 2.92.7 4.13L8 10.4l-3.7 1.94L5 8.37 2 5.45l4.15-.7z"/></svg></div>
-      <p class="testi-text">"El curso me ha llevado de 0 a 100 en pocas páginas. Lo que más me ha gustado es que se explican las estructuras de todo al detalle y en mi caso ayuda a la comprensión más rápida de puntos complejos."</p>
-      <div class="testi-author"><div class="testi-avatar">P</div><div><div class="testi-name">Pablo Cordero</div><div class="testi-ver">✓ Compra verificada</div></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="precio">
-  <div class="sec-label">Inversión</div>
-  <h2 class="sec-title" style="text-align:center">Un precio,<br><em>todo incluido</em></h2>
-  <div class="pricing-wrap">
-    <div class="pricing-head">
-      <div class="pricing-lbl">Paquete completo — 4 cursos en 1</div>
-      <div class="pricing-ttl">Clara Luna Piano Academy</div>
-      <div class="pricing-sub">Acceso inmediato a todos los materiales en tu correo</div>
-    </div>
-    <div class="pricing-body">
-      <ul class="pricing-items">
-        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2 2 4-4"/></svg></div>Vol. I — Guía PDF: Cómo tocar piano y leer partituras</li>
-        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2 2 4-4"/></svg></div>Vol. II — Guía PDF: Nivel intermedio–avanzado</li>
-        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2 2 4-4"/></svg></div>30 ejercicios de coordinación — Video principiante</li>
-        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2 2 4-4"/></svg></div>30 ejercicios de coordinación — Video intermedio</li>
-        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2 2 4-4"/></svg></div>+100 tutoriales en video · +7 horas de contenido</li>
-        <li><div class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2 2 4-4"/></svg></div>Acceso de por vida — sin suscripciones</li>
-      </ul>
-      <div class="amt-row">
-        <div class="amt-main">$739 <span style="font-size:1.8rem">MXN</span></div>
-        <div><div class="amt-orig">$1,848 MXN</div><div class="amt-save">60% de descuento aplicado</div></div>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-num">+100</div>
+        <h3>Páginas en PDF</h3>
+        <p>Descargable, tuyo para siempre, sin plataformas.</p>
       </div>
-      <p class="pricing-note">Precio en pesos mexicanos. El descuento ya está aplicado — no necesitas ningún código.</p>
-      <div class="discount-banner">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" style="flex-shrink:0"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-        <p><strong>60% de descuento ya aplicado.</strong> El precio final es $739 MXN — sin códigos, sin pasos extra. Solo da clic y compra.</p>
+      <div class="feature-card">
+        <div class="feature-num">7 hrs</div>
+        <h3>Contenido en video</h3>
+        <p>Un tutorial por tema, repite cuantas veces necesites.</p>
       </div>
-      <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" class="btn-buy" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:739,currency:'MXN'})">
-        Obtener el curso completo — $739 MXN →
-      </a>
-      <div class="pricing-secure">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="14" height="10" rx="1"/><path d="M7 8V6a3 3 0 016 0v2"/></svg>
-        <p>Pago 100% seguro con Stripe. Recibes tus materiales inmediatamente en tu correo al completar la compra.</p>
+      <div class="feature-card">
+        <div class="feature-num">10</div>
+        <h3>Piezas reales</h3>
+        <p>Las leerás y tocarás todas desde partitura.</p>
+      </div>
+      <div class="feature-card highlight">
+        <div class="feature-num">∞</div>
+        <h3>Acceso permanente</h3>
+        <p>Sin suscripciones, sin fechas límite.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<section style="background:var(--gray)" id="faq">
-  <div class="sec-label">Preguntas frecuentes</div>
-  <h2 class="sec-title" style="text-align:center">Todo lo que<br><em>necesitas saber</em></h2>
-  <div class="faq-list">
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Necesito experiencia musical previa?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">No, en absoluto. El curso está diseñado para principiantes desde cero. No necesitas saber nada de música ni haber tocado un instrumento antes.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Es pago único o mensual?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Es un único pago. Una vez que compras tienes acceso de por vida a todos los materiales sin ningún cobro adicional.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Cómo recibo los materiales?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Inmediatamente después de tu compra recibes un email con los links de descarga de los 4 productos. Todo llega directo a tu correo en segundos.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Desde qué dispositivos puedo acceder?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Desde cualquier dispositivo: computadora, tablet o celular. También puedes descargar los archivos para acceder sin conexión.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Qué métodos de pago aceptan?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Tarjeta de crédito y débito a través de Stripe, la plataforma de pagos más segura del mundo.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Qué lograré al terminar el curso?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">Habrás aprendido a leer partituras, entender conceptos musicales y tocar 10 piezas completas para piano.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-qt">¿Tengo que estudiar en horarios fijos?</span><svg class="faq-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3v10M3 8h10"/></svg></button><div class="faq-ans">No. Las clases son grabadas y puedes verlas cuando quieras, a tu propio ritmo, cuantas veces necesites.</div></div>
-  </div>
-</section>
+    <p class="modulos-label">Los nueve módulos</p>
+    <div class="modulos">
+      <span class="modulo">Conceptos básicos</span>
+      <span class="modulo">Intervalos</span>
+      <span class="modulo">Acordes</span>
+      <span class="modulo">Escalas</span>
+      <span class="modulo">Funciones y grados</span>
+      <span class="modulo">Ritmo y compás</span>
+      <span class="modulo">Análisis musical</span>
+      <span class="modulo">Leer al piano</span>
+      <span class="modulo active">Tocando tus primeras piezas</span>
+    </div>
+  </section>
 
-<footer>
-  <div class="footer-logo">Clara <span>Luna</span> Piano Academy</div>
-  <ul class="footer-links"><li><a href="mailto:cursos@claraluna.online">Contacto</a></li></ul>
-  <div class="footer-copy">© 2026 Clara Luna Piano Academy</div>
-</footer>
+  <!-- TESTIMONIAL -->
+  <section class="testimonial-section">
+    <span class="section-eyebrow">Estudiantes</span>
+    <div class="divider" style="margin-bottom:24px"><span></span><span class="diamond"></span><span></span></div>
+    <blockquote>"Las clases son muy amenas, tiene excelentes bases y se entiende muy bien. La forma de explicar es apta para cualquier persona que quiera aprender."</blockquote>
+    <figcaption>— Fabian Sanchez, compra verificada</figcaption>
+  </section>
 
-<div id="videoModal" class="modal-ov" onclick="closeModal()">
-  <div class="modal-inner" onclick="event.stopPropagation()">
-    <button class="modal-close" onclick="closeModal()"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l10 10M11 1L1 11"/></svg> Cerrar</button>
-    <div class="modal-vid"><iframe id="videoIframe" src="" allowfullscreen></iframe></div>
-  </div>
+  <!-- PRECIO -->
+  <section class="precio-section" id="precio">
+    <div class="section-header">
+      <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
+      <span class="section-eyebrow">Inversión</span>
+      <h2>Un precio, <em>todo incluido</em></h2>
+    </div>
+
+    <div class="precio-box">
+      <div class="precio-box-header">
+        <h3>Piano Academy — Clara</h3>
+        <p>Acceso inmediato · 4 productos en 1 · pago único</p>
+      </div>
+      <div class="precio-box-body">
+        <ul class="precio-list">
+          <li>Guía PDF Vol. I — Cómo tocar piano y leer partituras</li>
+          <li>Guía PDF Vol. II — Nivel intermedio-avanzado</li>
+          <li>60 ejercicios de coordinación en video — Vol. I y II</li>
+          <li>+100 tutoriales · +7 horas de contenido</li>
+          <li>Acceso de por vida — sin suscripciones</li>
+        </ul>
+        <div class="precio-amount">
+          <div class="precio-big">$739 <span>MXN</span></div>
+          <div>
+            <div class="precio-tachado">$1,848 MXN</div>
+            <div class="precio-descuento">60% de descuento</div>
+          </div>
+        </div>
+        <p class="precio-nota">Precio en pesos mexicanos. El descuento ya está aplicado.</p>
+        <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout',{value:739,currency:'MXN'})" class="btn-block">Obtener el curso completo</a>
+        <p class="precio-seguro">Pago 100% seguro con Stripe · recibes los materiales por correo de inmediato</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-header">
+      <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
+      <span class="section-eyebrow">Preguntas frecuentes</span>
+      <h2>Todo lo que <em>necesitas saber</em></h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary><span>¿Necesito experiencia musical previa?</span><span class="chev">›</span></summary>
+        <p>No. El curso empieza desde cero absoluto. No necesitas saber nada de música ni haber tocado un instrumento antes.</p>
+      </details>
+      <details>
+        <summary><span>¿Cómo recibo los materiales?</span><span class="chev">›</span></summary>
+        <p>Al completar tu compra recibes un correo con los enlaces de descarga en segundos. Sin esperas, sin plataformas.</p>
+      </details>
+      <details>
+        <summary><span>¿Es pago único o mensual?</span><span class="chev">›</span></summary>
+        <p>Pago único. Acceso de por vida a todos los materiales sin ningún cobro adicional.</p>
+      </details>
+      <details>
+        <summary><span>¿Necesito tener un piano?</span><span class="chev">›</span></summary>
+        <p>No necesitas un piano de cola. Cualquier teclado con 61 teclas o más es suficiente para practicar todo el contenido.</p>
+      </details>
+      <details>
+        <summary><span>¿Qué métodos de pago aceptan?</span><span class="chev">›</span></summary>
+        <p>Tarjeta de crédito y débito a través de Stripe, la plataforma de pagos más segura del mundo.</p>
+      </details>
+    </div>
+  </section>
+
+  <div class="divider"><span></span><span class="diamond"></span><span></span></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="brand">Piano Academy <em>— Clara</em></span>
+    <a href="mailto:cursos@claraluna.online">cursos@claraluna.online</a>
+    <span>© 2026 · Todos los derechos reservados</span>
+  </footer>
+
 </div>
-
-<script>
-  function openModal(id){document.getElementById('videoIframe').src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';document.getElementById('videoModal').style.display='flex';document.body.style.overflow='hidden'}
-  function closeModal(){document.getElementById('videoIframe').src='';document.getElementById('videoModal').style.display='none';document.body.style.overflow=''}
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
-  function toggleFaq(btn){var item=btn.parentElement;var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open')});if(!isOpen)item.classList.add('open')}
-</script>
 </body>
 </html>
