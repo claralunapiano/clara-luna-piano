@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 
+  <!-- Stripe.js -->
+  <script src="https://js.stripe.com/v3/"></script>
+
   <!-- GTM -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WKRXFW78');</script>
 
@@ -62,12 +65,7 @@
       letter-spacing: 0.01em;
       margin-right: auto;
     }
-    nav a {
-      color: #2b2119;
-      text-decoration: none;
-      font-size: 16px;
-      font-family: 'Cormorant Garamond', serif;
-    }
+    nav a { color: #2b2119; text-decoration: none; font-size: 16px; }
     .btn-nav {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
@@ -78,17 +76,14 @@
       background: #6d1f2c;
       padding: 11px 22px;
       text-decoration: none;
+      cursor: pointer;
+      border: none;
     }
-    @media (max-width: 600px) {
-      nav a:not(.btn-nav) { display: none; }
-    }
+    .btn-nav:hover { background: #8a2636; }
+    @media (max-width: 600px) { nav a:not(.btn-nav) { display: none; } }
 
     /* ── WRAP ── */
-    .wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 clamp(20px, 4vw, 60px);
-    }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 60px); }
 
     /* ── HERO ── */
     .hero {
@@ -109,14 +104,12 @@
       text-transform: uppercase;
       color: #a9793a;
       margin-bottom: 20px;
-      font-family: 'Cormorant Garamond', serif;
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
       font-size: clamp(40px, 5.2vw, 68px);
       line-height: 1.08;
-      letter-spacing: 0.005em;
     }
     .hero h1 em { font-style: italic; color: #6d1f2c; }
     .hero-sub {
@@ -144,22 +137,15 @@
       padding: 17px 40px;
       text-decoration: none;
       display: inline-block;
+      cursor: pointer;
+      border: none;
       transition: background .18s;
     }
     .btn-primary:hover { background: #8a2636; }
     .price-inline { font-size: 17px; color: rgba(43,33,25,0.68); }
     .price-inline strong { color: #2b2119; }
-    .hero figure {
-      margin: 0;
-      border: 1px solid #c9a24b;
-      padding: 10px;
-    }
-    .hero figure img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-    }
+    .hero figure { margin: 0; border: 1px solid #c9a24b; padding: 10px; }
+    .hero figure img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; }
 
     /* ── DIVIDER ── */
     .divider {
@@ -171,12 +157,7 @@
     }
     .divider span:first-child,
     .divider span:last-child { flex: 1; height: 1px; background: #c9a24b; }
-    .divider .diamond {
-      width: 7px; height: 7px;
-      background: #c9a24b;
-      transform: rotate(45deg);
-      flex-shrink: 0;
-    }
+    .diamond { width: 7px; height: 7px; background: #c9a24b; transform: rotate(45deg); flex-shrink: 0; }
 
     /* ── STATS ── */
     .stats {
@@ -194,200 +175,53 @@
       .stats > div:nth-child(1), .stats > div:nth-child(2) { border-top: none; }
     }
     .stats > div + div { border-left: 1px solid rgba(169,121,58,0.35); }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      font-size: 38px;
-      color: #6d1f2c;
-    }
-    .stat-label {
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(43,33,25,0.6);
-      margin-top: 6px;
-      font-family: 'Cormorant Garamond', serif;
-    }
+    .stat-num { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 38px; color: #6d1f2c; }
+    .stat-label { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(43,33,25,0.6); margin-top: 6px; }
 
-    /* ── CURSO ── */
+    /* ── SECTIONS ── */
     .section-header { text-align: center; margin-bottom: 40px; }
-    .section-eyebrow {
-      display: block;
-      font-size: 14px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: #a9793a;
-      margin-bottom: 14px;
-      font-family: 'Cormorant Garamond', serif;
-    }
-    .section-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      font-size: clamp(30px, 3.2vw, 46px);
-    }
+    .section-eyebrow { display: block; font-size: 14px; letter-spacing: 0.3em; text-transform: uppercase; color: #a9793a; margin-bottom: 14px; }
+    .section-header h2 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: clamp(30px, 3.2vw, 46px); }
     .section-header h2 em { font-style: italic; color: #6d1f2c; }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 28px;
-      margin-bottom: 44px;
-    }
+    .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-bottom: 44px; }
     @media (max-width: 900px) { .features { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 500px) { .features { grid-template-columns: 1fr; } }
-    .feature-card {
-      border: 1px solid rgba(109,31,44,0.22);
-      padding: 28px;
-      text-align: center;
-    }
-    .feature-card.highlight {
-      border-color: #6d1f2c;
-      background: rgba(109,31,44,0.05);
-    }
-    .feature-num {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      font-size: 28px;
-      color: #a9793a;
-    }
+    .feature-card { border: 1px solid rgba(109,31,44,0.22); padding: 28px; text-align: center; }
+    .feature-card.highlight { border-color: #6d1f2c; background: rgba(109,31,44,0.05); }
+    .feature-num { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 28px; color: #a9793a; }
     .feature-card.highlight .feature-num { color: #6d1f2c; }
-    .feature-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      font-size: 19px;
-      margin: 10px 0 0;
-    }
-    .feature-card p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin: 8px 0 0;
-      color: rgba(43,33,25,0.68);
-    }
+    .feature-card h3 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 19px; margin: 10px 0 0; }
+    .feature-card p { font-size: 16px; line-height: 1.6; margin: 8px 0 0; color: rgba(43,33,25,0.68); }
 
-    .modulos-label {
-      text-align: center;
-      font-size: 14px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #a9793a;
-      margin: 0 0 16px;
-      font-family: 'Cormorant Garamond', serif;
-    }
-    .modulos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 72px;
-    }
-    .modulo {
-      font-size: 15px;
-      color: #2b2119;
-      border: 1px solid rgba(109,31,44,0.3);
-      padding: 7px 16px;
-      font-family: 'Cormorant Garamond', serif;
-    }
-    .modulo.active {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      color: #f7f1e4;
-      background: #6d1f2c;
-      border-color: #6d1f2c;
-    }
+    .modulos-label { text-align: center; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: #a9793a; margin: 0 0 16px; }
+    .modulos { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 72px; }
+    .modulo { font-size: 15px; color: #2b2119; border: 1px solid rgba(109,31,44,0.3); padding: 7px 16px; }
+    .modulo.active { font-family: 'Playfair Display', serif; font-style: italic; color: #f7f1e4; background: #6d1f2c; border-color: #6d1f2c; }
 
-    /* ── TESTIMONIAL ── */
-    .testimonial-section {
-      padding: 64px 0;
-      text-align: center;
-      border-top: 1px solid #c9a24b;
-    }
-    blockquote {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-weight: 500;
-      font-size: clamp(22px, 2.6vw, 32px);
-      line-height: 1.5;
-      max-width: 44ch;
-      margin: 0 auto;
-    }
-    figcaption {
-      font-size: 15px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #a9793a;
-      margin: 24px 0 0;
-      font-family: 'Cormorant Garamond', serif;
-    }
+    .testimonial-section { padding: 64px 0; text-align: center; border-top: 1px solid #c9a24b; }
+    blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.5; max-width: 44ch; margin: 0 auto; }
+    figcaption { font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #a9793a; margin: 24px 0 0; }
 
     /* ── PRECIO ── */
     .precio-section { padding: 64px 0 72px; }
-    .precio-box {
-      max-width: 620px;
-      margin: 0 auto;
-      border: 1px solid #c9a24b;
-    }
-    .precio-box-header {
-      padding: 28px 36px;
-      border-bottom: 1px solid rgba(169,121,58,0.35);
-    }
-    .precio-box-header h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      font-size: 24px;
-      margin: 0 0 6px;
-    }
-    .precio-box-header p {
-      font-size: 16px;
-      margin: 0;
-      color: rgba(43,33,25,0.68);
-    }
+    .precio-box { max-width: 620px; margin: 0 auto; border: 1px solid #c9a24b; }
+    .precio-box-header { padding: 28px 36px; border-bottom: 1px solid rgba(169,121,58,0.35); }
+    .precio-box-header h3 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 24px; margin: 0 0 6px; }
+    .precio-box-header p { font-size: 16px; margin: 0; color: rgba(43,33,25,0.68); }
     .precio-box-body { padding: 32px 36px; }
-    .precio-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin: 0 0 30px;
-      padding: 0;
-    }
-    .precio-list li {
-      font-size: 16px;
-      padding-left: 26px;
-      position: relative;
-    }
-    .precio-list li::before {
-      content: '◆';
-      position: absolute;
-      left: 0;
-      color: #a9793a;
-      font-size: 10px;
-      top: 4px;
-    }
-    .precio-amount {
-      display: flex;
-      align-items: baseline;
-      gap: 18px;
-      margin-bottom: 8px;
-    }
-    .precio-big {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 52px;
-      color: #6d1f2c;
-    }
+    .precio-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 0 0 30px; padding: 0; }
+    .precio-list li { font-size: 16px; padding-left: 26px; position: relative; }
+    .precio-list li::before { content: '◆'; position: absolute; left: 0; color: #a9793a; font-size: 10px; top: 4px; }
+    .precio-amount { display: flex; align-items: baseline; gap: 18px; margin-bottom: 8px; }
+    .precio-big { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 52px; color: #6d1f2c; }
     .precio-big span { font-size: 24px; font-weight: 500; }
     .precio-tachado { font-size: 16px; color: rgba(43,33,25,0.4); text-decoration: line-through; }
-    .precio-descuento {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #a9793a;
-      font-family: 'Cormorant Garamond', serif;
-    }
+    .precio-descuento { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #a9793a; }
     .precio-nota { font-size: 14px; color: rgba(43,33,25,0.65); margin: 0 0 26px; }
     .btn-block {
       display: block;
+      width: 100%;
       text-align: center;
       font-family: 'Playfair Display', serif;
       font-weight: 600;
@@ -398,48 +232,64 @@
       background: #6d1f2c;
       padding: 19px;
       text-decoration: none;
+      border: none;
+      cursor: pointer;
       transition: background .18s;
     }
     .btn-block:hover { background: #8a2636; }
-    .precio-seguro {
-      text-align: center;
-      font-size: 14px;
-      color: rgba(43,33,25,0.6);
-      margin: 18px 0 0;
-      padding-top: 18px;
-      border-top: 1px solid rgba(169,121,58,0.3);
+    .precio-seguro { text-align: center; font-size: 14px; color: rgba(43,33,25,0.6); margin: 18px 0 0; padding-top: 18px; border-top: 1px solid rgba(169,121,58,0.3); }
+
+    /* ── STRIPE CHECKOUT MODAL ── */
+    #checkout-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(43,33,25,0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
+    #checkout-overlay.active { display: flex; }
+    #checkout-container {
+      background: #f7f1e4;
+      border: 1px solid #c9a24b;
+      padding: 32px;
+      width: 100%;
+      max-width: 560px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    #checkout-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: rgba(43,33,25,0.5);
+      line-height: 1;
+    }
+    #checkout-close:hover { color: #2b2119; }
+    #checkout-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 22px;
+      margin: 0 0 24px;
+      padding-right: 32px;
+    }
+    #stripe-checkout { min-height: 300px; }
 
     /* ── FAQ ── */
     .faq-section { padding: 0 0 72px; }
-    .faq-list {
-      max-width: 700px;
-      margin: 0 auto;
-      border-top: 1px solid rgba(169,121,58,0.35);
-    }
-    .faq-list details {
-      border-bottom: 1px solid rgba(169,121,58,0.35);
-    }
-    .faq-list summary {
-      padding: 22px 4px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-    .faq-list summary span:first-child {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      font-size: 19px;
-    }
+    .faq-list { max-width: 700px; margin: 0 auto; border-top: 1px solid rgba(169,121,58,0.35); }
+    .faq-list details { border-bottom: 1px solid rgba(169,121,58,0.35); }
+    .faq-list summary { padding: 22px 4px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-list summary span:first-child { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 19px; }
     .faq-list summary .chev { color: #a9793a; font-size: 18px; flex-shrink: 0; }
-    .faq-list p {
-      margin: 0;
-      padding: 0 4px 22px;
-      font-size: 16px;
-      line-height: 1.7;
-      color: rgba(43,33,25,0.7);
-    }
+    .faq-list p { margin: 0; padding: 0 4px 22px; font-size: 16px; line-height: 1.7; color: rgba(43,33,25,0.7); }
 
     /* ── FOOTER ── */
     footer {
@@ -459,7 +309,6 @@
   </style>
 </head>
 <body>
-<!-- GTM noscript -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKRXFW78" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- NAV -->
@@ -468,7 +317,7 @@
   <a href="#curso">Curso</a>
   <a href="#precio">Precio</a>
   <a href="#faq">Preguntas</a>
-  <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout',{value:739,currency:'MXN'})" class="btn-nav">Inscribirme</a>
+  <button class="btn-nav" onclick="openCheckout()">Inscribirme</button>
 </nav>
 
 <div class="wrap">
@@ -480,7 +329,7 @@
       <h1>Toca piano<br><em>y lee partituras</em></h1>
       <p class="hero-sub">Un método progresivo para adultos desde cero. Sin atajos — con teoría real, para que lo que aprendas te dure toda la vida.</p>
       <div class="hero-cta">
-        <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout',{value:739,currency:'MXN'})" class="btn-primary">Comenzar ahora</a>
+        <button class="btn-primary" onclick="openCheckout()">Comenzar ahora</button>
         <span class="price-inline"><strong>$739 MXN</strong> · pago único</span>
       </div>
     </div>
@@ -501,36 +350,18 @@
   </div>
 
   <!-- CURSO -->
-  <section id="curso" style="padding: 0 0 64px">
+  <section id="curso" style="padding:0 0 64px">
     <div class="section-header">
       <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
       <span class="section-eyebrow">El curso</span>
       <h2>9 módulos, <em>una lógica clara</em></h2>
     </div>
-
     <div class="features">
-      <div class="feature-card">
-        <div class="feature-num">+100</div>
-        <h3>Páginas en PDF</h3>
-        <p>Descargable, tuyo para siempre, sin plataformas.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">7 hrs</div>
-        <h3>Contenido en video</h3>
-        <p>Un tutorial por tema, repite cuantas veces necesites.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">10</div>
-        <h3>Piezas reales</h3>
-        <p>Las leerás y tocarás todas desde partitura.</p>
-      </div>
-      <div class="feature-card highlight">
-        <div class="feature-num">∞</div>
-        <h3>Acceso permanente</h3>
-        <p>Sin suscripciones, sin fechas límite.</p>
-      </div>
+      <div class="feature-card"><div class="feature-num">+100</div><h3>Páginas en PDF</h3><p>Descargable, tuyo para siempre, sin plataformas.</p></div>
+      <div class="feature-card"><div class="feature-num">7 hrs</div><h3>Contenido en video</h3><p>Un tutorial por tema, repite cuantas veces necesites.</p></div>
+      <div class="feature-card"><div class="feature-num">10</div><h3>Piezas reales</h3><p>Las leerás y tocarás todas desde partitura.</p></div>
+      <div class="feature-card highlight"><div class="feature-num">∞</div><h3>Acceso permanente</h3><p>Sin suscripciones, sin fechas límite.</p></div>
     </div>
-
     <p class="modulos-label">Los nueve módulos</p>
     <div class="modulos">
       <span class="modulo">Conceptos básicos</span>
@@ -560,7 +391,6 @@
       <span class="section-eyebrow">Inversión</span>
       <h2>Un precio, <em>todo incluido</em></h2>
     </div>
-
     <div class="precio-box">
       <div class="precio-box-header">
         <h3>Piano Academy — Clara</h3>
@@ -582,7 +412,7 @@
           </div>
         </div>
         <p class="precio-nota">Precio en pesos mexicanos. El descuento ya está aplicado.</p>
-        <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout',{value:739,currency:'MXN'})" class="btn-block">Obtener el curso completo</a>
+        <button class="btn-block" onclick="openCheckout()">Obtener el curso completo</button>
         <p class="precio-seguro">Pago 100% seguro con Stripe · recibes los materiales por correo de inmediato</p>
       </div>
     </div>
@@ -596,26 +426,11 @@
       <h2>Todo lo que <em>necesitas saber</em></h2>
     </div>
     <div class="faq-list">
-      <details>
-        <summary><span>¿Necesito experiencia musical previa?</span><span class="chev">›</span></summary>
-        <p>No. El curso empieza desde cero absoluto. No necesitas saber nada de música ni haber tocado un instrumento antes.</p>
-      </details>
-      <details>
-        <summary><span>¿Cómo recibo los materiales?</span><span class="chev">›</span></summary>
-        <p>Al completar tu compra recibes un correo con los enlaces de descarga en segundos. Sin esperas, sin plataformas.</p>
-      </details>
-      <details>
-        <summary><span>¿Es pago único o mensual?</span><span class="chev">›</span></summary>
-        <p>Pago único. Acceso de por vida a todos los materiales sin ningún cobro adicional.</p>
-      </details>
-      <details>
-        <summary><span>¿Necesito tener un piano?</span><span class="chev">›</span></summary>
-        <p>No necesitas un piano de cola. Cualquier teclado con 61 teclas o más es suficiente para practicar todo el contenido.</p>
-      </details>
-      <details>
-        <summary><span>¿Qué métodos de pago aceptan?</span><span class="chev">›</span></summary>
-        <p>Tarjeta de crédito y débito a través de Stripe, la plataforma de pagos más segura del mundo.</p>
-      </details>
+      <details><summary><span>¿Necesito experiencia musical previa?</span><span class="chev">›</span></summary><p>No. El curso empieza desde cero absoluto. No necesitas saber nada de música ni haber tocado un instrumento antes.</p></details>
+      <details><summary><span>¿Cómo recibo los materiales?</span><span class="chev">›</span></summary><p>Al completar tu compra recibes un correo con los enlaces de descarga en segundos. Sin esperas, sin plataformas.</p></details>
+      <details><summary><span>¿Es pago único o mensual?</span><span class="chev">›</span></summary><p>Pago único. Acceso de por vida a todos los materiales sin ningún cobro adicional.</p></details>
+      <details><summary><span>¿Necesito tener un piano?</span><span class="chev">›</span></summary><p>No necesitas un piano de cola. Cualquier teclado con 61 teclas o más es suficiente para practicar todo el contenido.</p></details>
+      <details><summary><span>¿Qué métodos de pago aceptan?</span><span class="chev">›</span></summary><p>Tarjeta de crédito y débito a través de Stripe, la plataforma de pagos más segura del mundo.</p></details>
     </div>
   </section>
 
@@ -629,5 +444,53 @@
   </footer>
 
 </div>
+
+<!-- STRIPE CHECKOUT MODAL -->
+<div id="checkout-overlay">
+  <div id="checkout-container">
+    <button id="checkout-close" onclick="closeCheckout()">×</button>
+    <p id="checkout-title">Completa tu compra</p>
+    <div id="stripe-checkout"></div>
+  </div>
+</div>
+
+<script>
+  const BACKEND_URL = 'https://project-6exjh.vercel.app/api/create-checkout';
+  let stripe = Stripe('pk_live_51RFLpQP1TFoxoUbf8vuQXsOvhgaAGQHQHuGVuZaD2HX8QPlwJb6oKVJGAT7wnFerNUVG6tl1gS66n4nVJIuHUPJ300WDEA3Cxf');
+  let checkoutInstance = null;
+
+  async function openCheckout() {
+    if (window.fbq) fbq('track', 'InitiateCheckout', { value: 739, currency: 'MXN' });
+
+    const overlay = document.getElementById('checkout-overlay');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    if (checkoutInstance) return;
+
+    document.getElementById('stripe-checkout').innerHTML = '<p style="text-align:center;padding:40px;color:rgba(43,33,25,0.5);font-size:15px;">Cargando...</p>';
+
+    try {
+      const res = await fetch(BACKEND_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' } });
+      const { clientSecret } = await res.json();
+
+      checkoutInstance = await stripe.initEmbeddedCheckout({ clientSecret });
+      document.getElementById('stripe-checkout').innerHTML = '';
+      checkoutInstance.mount('#stripe-checkout');
+    } catch (err) {
+      document.getElementById('stripe-checkout').innerHTML = '<p style="text-align:center;padding:20px;color:#6d1f2c;">Error al cargar el checkout. Intenta de nuevo.</p>';
+      console.error(err);
+    }
+  }
+
+  function closeCheckout() {
+    document.getElementById('checkout-overlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('checkout-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeCheckout();
+  });
+</script>
 </body>
 </html>
