@@ -10,9 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 
-  <!-- Stripe.js -->
-  <script src="https://js.stripe.com/v3/"></script>
-
   <!-- GTM -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WKRXFW78');</script>
 
@@ -26,11 +23,12 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1463049405557753');
+  fbq('init', '1317056650594410');
   fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {content_name: 'Curso Piano Hotmart', value: 44, currency: 'USD'});
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1463049405557753&ev=PageView&noscript=1"
+  src="https://www.facebook.com/tr?id=1317056650594410&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
 
@@ -239,49 +237,6 @@
     .btn-block:hover { background: #8a2636; }
     .precio-seguro { text-align: center; font-size: 14px; color: rgba(43,33,25,0.6); margin: 18px 0 0; padding-top: 18px; border-top: 1px solid rgba(169,121,58,0.3); }
 
-    /* ── STRIPE CHECKOUT MODAL ── */
-    #checkout-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(43,33,25,0.7);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    #checkout-overlay.active { display: flex; }
-    #checkout-container {
-      background: #f7f1e4;
-      border: 1px solid #c9a24b;
-      padding: 32px;
-      width: 100%;
-      max-width: 560px;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-    }
-    #checkout-close {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
-      color: rgba(43,33,25,0.5);
-      line-height: 1;
-    }
-    #checkout-close:hover { color: #2b2119; }
-    #checkout-title {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      font-size: 22px;
-      margin: 0 0 24px;
-      padding-right: 32px;
-    }
-    #stripe-checkout { min-height: 300px; }
-
     /* ── FAQ ── */
     .faq-section { padding: 0 0 72px; }
     .faq-list { max-width: 700px; margin: 0 auto; border-top: 1px solid rgba(169,121,58,0.35); }
@@ -317,7 +272,7 @@
   <a href="#curso">Curso</a>
   <a href="#precio">Precio</a>
   <a href="#faq">Preguntas</a>
-  <button class="btn-nav" onclick="openCheckout()">Inscribirme</button>
+  <a href="https://pay.hotmart.com/V93892706E?checkoutMode=10" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout',{value:44,currency:'USD'})" class="btn-nav">Inscribirme</a>
 </nav>
 
 <div class="wrap">
@@ -329,8 +284,8 @@
       <h1>Toca piano<br><em>y lee partituras</em></h1>
       <p class="hero-sub">Un método progresivo para adultos desde cero. Sin atajos — con teoría real, para que lo que aprendas te dure toda la vida.</p>
       <div class="hero-cta">
-        <button class="btn-primary" onclick="openCheckout()">Comenzar ahora</button>
-        <span class="price-inline"><strong>$739 MXN</strong> · pago único</span>
+        <a href="https://pay.hotmart.com/V93892706E?checkoutMode=10" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout',{value:44,currency:'USD'})" class="btn-primary">Comenzar ahora</a>
+        <span class="price-inline"><strong>$44 USD</strong> · pago único · acceso de por vida</span>
       </div>
     </div>
     <figure>
@@ -357,10 +312,10 @@
       <h2>9 módulos, <em>una lógica clara</em></h2>
     </div>
     <div class="features">
-      <div class="feature-card"><div class="feature-num">+100</div><h3>Páginas en PDF</h3><p>Descargable, tuyo para siempre, sin plataformas.</p></div>
+      <div class="feature-card"><div class="feature-num">+100</div><h3>Páginas de guía</h3><p>Material de estudio completo dentro de la plataforma.</p></div>
       <div class="feature-card"><div class="feature-num">7 hrs</div><h3>Contenido en video</h3><p>Un tutorial por tema, repite cuantas veces necesites.</p></div>
       <div class="feature-card"><div class="feature-num">10</div><h3>Piezas reales</h3><p>Las leerás y tocarás todas desde partitura.</p></div>
-      <div class="feature-card highlight"><div class="feature-num">∞</div><h3>Acceso permanente</h3><p>Sin suscripciones, sin fechas límite.</p></div>
+      <div class="feature-card highlight"><div class="feature-num">∞</div><h3>Acceso de por vida</h3><p>En Hotmart, desde cualquier dispositivo, sin fechas límite.</p></div>
     </div>
     <p class="modulos-label">Los nueve módulos</p>
     <div class="modulos">
@@ -394,26 +349,22 @@
     <div class="precio-box">
       <div class="precio-box-header">
         <h3>Piano Academy — Clara</h3>
-        <p>Acceso inmediato · 4 productos en 1 · pago único</p>
+        <p>Acceso inmediato en Hotmart · pago único · de por vida</p>
       </div>
       <div class="precio-box-body">
         <ul class="precio-list">
-          <li>Guía PDF Vol. I — Cómo tocar piano y leer partituras</li>
-          <li>Guía PDF Vol. II — Nivel intermedio-avanzado</li>
-          <li>60 ejercicios de coordinación en video — Vol. I y II</li>
-          <li>+100 tutoriales · +7 horas de contenido</li>
-          <li>Acceso de por vida — sin suscripciones</li>
+          <li>9 módulos progresivos — de cero a tocar tus primeras piezas</li>
+          <li>+100 páginas de guía de estudio</li>
+          <li>+7 horas de video — un tutorial por tema</li>
+          <li>10 piezas reales que tocarás leyendo partitura</li>
+          <li>Acceso de por vida en Hotmart — sin suscripciones</li>
         </ul>
         <div class="precio-amount">
-          <div class="precio-big">$739 <span>MXN</span></div>
-          <div>
-            <div class="precio-tachado">$1,848 MXN</div>
-            <div class="precio-descuento">60% de descuento</div>
-          </div>
+          <div class="precio-big">$44 <span>USD</span></div>
         </div>
-        <p class="precio-nota">Precio en pesos mexicanos. El descuento ya está aplicado.</p>
-        <button class="btn-block" onclick="openCheckout()">Obtener el curso completo</button>
-        <p class="precio-seguro">Pago 100% seguro con Stripe · recibes los materiales por correo de inmediato</p>
+        <p class="precio-nota">Pago único en dólares a través de Hotmart. Puedes pagar en tu moneda local.</p>
+        <a href="https://pay.hotmart.com/V93892706E?checkoutMode=10" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout',{value:44,currency:'USD'})" class="btn-block">Obtener el curso completo</a>
+        <p class="precio-seguro">Pago 100% seguro a través de Hotmart · acceso inmediato al curso · garantía de 7 días</p>
       </div>
     </div>
   </section>
@@ -427,10 +378,11 @@
     </div>
     <div class="faq-list">
       <details><summary><span>¿Necesito experiencia musical previa?</span><span class="chev">›</span></summary><p>No. El curso empieza desde cero absoluto. No necesitas saber nada de música ni haber tocado un instrumento antes.</p></details>
-      <details><summary><span>¿Cómo recibo los materiales?</span><span class="chev">›</span></summary><p>Al completar tu compra recibes un correo con los enlaces de descarga en segundos. Sin esperas, sin plataformas.</p></details>
-      <details><summary><span>¿Es pago único o mensual?</span><span class="chev">›</span></summary><p>Pago único. Acceso de por vida a todos los materiales sin ningún cobro adicional.</p></details>
+      <details><summary><span>¿Cómo accedo al curso?</span><span class="chev">›</span></summary><p>Al completar tu compra, Hotmart te envía tus accesos por correo en segundos. Entras a la plataforma y todo el contenido está ahí, disponible desde tu celular, tablet o computadora.</p></details>
+      <details><summary><span>¿Es pago único o mensual?</span><span class="chev">›</span></summary><p>Pago único. Acceso de por vida al curso completo sin ningún cobro adicional, ni suscripciones.</p></details>
       <details><summary><span>¿Necesito tener un piano?</span><span class="chev">›</span></summary><p>No necesitas un piano de cola. Cualquier teclado con 61 teclas o más es suficiente para practicar todo el contenido.</p></details>
-      <details><summary><span>¿Qué métodos de pago aceptan?</span><span class="chev">›</span></summary><p>Tarjeta de crédito y débito a través de Stripe, la plataforma de pagos más segura del mundo.</p></details>
+      <details><summary><span>¿Qué métodos de pago aceptan?</span><span class="chev">›</span></summary><p>Tarjeta de crédito y débito, y los métodos locales de tu país, a través de Hotmart — la plataforma de cursos más grande de Latinoamérica.</p></details>
+      <details><summary><span>¿Tiene garantía?</span><span class="chev">›</span></summary><p>Sí. Tienes 7 días de garantía. Si el curso no es para ti, Hotmart te devuelve el 100% de tu dinero, sin preguntas.</p></details>
     </div>
   </section>
 
@@ -445,52 +397,5 @@
 
 </div>
 
-<!-- STRIPE CHECKOUT MODAL -->
-<div id="checkout-overlay">
-  <div id="checkout-container">
-    <button id="checkout-close" onclick="closeCheckout()">×</button>
-    <p id="checkout-title">Completa tu compra</p>
-    <div id="stripe-checkout"></div>
-  </div>
-</div>
-
-<script>
-  const BACKEND_URL = 'https://project-6exjh.vercel.app/api/create-checkout';
-  let stripe = Stripe('pk_live_51RFLpQP1TFoxoUbf8vuQXsOvhgaAGQHQHuGVuZaD2HX8QPlwJb6oKVJGAT7wnFerNUVG6tl1gS66n4nVJIuHUPJ300WDEA3Cxf');
-  let checkoutInstance = null;
-
-  async function openCheckout() {
-    if (window.fbq) fbq('track', 'InitiateCheckout', { value: 739, currency: 'MXN' });
-
-    const overlay = document.getElementById('checkout-overlay');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-
-    if (checkoutInstance) return;
-
-    document.getElementById('stripe-checkout').innerHTML = '<p style="text-align:center;padding:40px;color:rgba(43,33,25,0.5);font-size:15px;">Cargando...</p>';
-
-    try {
-      const res = await fetch(BACKEND_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' } });
-      const { clientSecret } = await res.json();
-
-      checkoutInstance = await stripe.initEmbeddedCheckout({ clientSecret });
-      document.getElementById('stripe-checkout').innerHTML = '';
-      checkoutInstance.mount('#stripe-checkout');
-    } catch (err) {
-      document.getElementById('stripe-checkout').innerHTML = '<p style="text-align:center;padding:20px;color:#6d1f2c;">Error al cargar el checkout. Intenta de nuevo.</p>';
-      console.error(err);
-    }
-  }
-
-  function closeCheckout() {
-    document.getElementById('checkout-overlay').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  document.getElementById('checkout-overlay').addEventListener('click', function(e) {
-    if (e.target === this) closeCheckout();
-  });
-</script>
 </body>
 </html>
