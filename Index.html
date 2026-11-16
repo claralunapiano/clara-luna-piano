@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piano Academy — Clara | Toca piano y lee partituras desde cero</title>
+  <meta name="description" content="Método progresivo para adultos: toca tus primeras 10 piezas leyendo partitura, desde cero. 9 módulos, +7 horas de video, acceso de por vida. Pago único, en tu moneda.">
+  <meta property="og:title" content="Piano Academy — Clara">
+  <meta property="og:description" content="Un método progresivo para tocar piano y leer partituras desde cero. 9 módulos, +7 horas de video, acceso de por vida.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="carla.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%236d1f2c'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%23f7f1e4'%3E%E2%99%AB%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+  <!-- GTM -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WKRXFW78');</script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1317056650594410');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {content_name: 'Curso Piano Hotmart'});
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1317056650594410&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #f7f1e4;
+      color: #2b2119;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .chev { transform: rotate(180deg); }
+    .chev { transition: transform .18s ease; display: inline-block; }
+
+    a { color: inherit; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 18px clamp(20px, 4vw, 60px);
+      background: rgba(247,241,228,0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(109,31,44,0.18);
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 21px;
+      letter-spacing: 0.01em;
+      margin-right: auto;
+    }
+    nav a:not(.btn-nav) { text-decoration: none; font-size: 16px; }
+    .btn-nav {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f7f1e4;
+      background: linear-gradient(135deg, #8a2636, #6d1f2c 65%);
+      padding: 13px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 8px 22px rgba(109,31,44,0.4), 0 0 0 1px rgba(255,255,255,0.08) inset;
+      transition: transform .18s, box-shadow .18s;
+    }
+    .btn-nav:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 12px 28px rgba(109,31,44,0.5); }
+    @media (max-width: 640px) { nav a:not(.btn-nav) { display: none; } }
+
+    /* ── WRAP ── */
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 60px); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      padding: 76px 0 64px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -140px; right: -160px;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(201,162,75,0.25) 0%, rgba(201,162,75,0) 70%);
+      pointer-events: none;
+    }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; padding: 40px 0 32px; }
+      .hero figure { order: -1; }
+    }
+    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+      color: #a9793a; border: 1px solid rgba(169,121,58,0.45);
+      border-radius: 999px; padding: 6px 14px;
+      background: rgba(201,162,75,0.08);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(38px, 5.4vw, 64px);
+      line-height: 1.1;
+    }
+    .hero h1 em { font-style: italic; color: #6d1f2c; }
+    .hero-sub {
+      font-size: 20px;
+      line-height: 1.65;
+      max-width: 50ch;
+      margin: 22px 0 0;
+      color: rgba(43,33,25,0.75);
+    }
+    .hero-cta {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .btn-primary, .btn-block {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #f7f1e4;
+      background: linear-gradient(135deg, #8a2636, #6d1f2c 60%);
+      padding: 20px 46px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 12px 30px rgba(109,31,44,0.42), 0 0 0 1px rgba(255,255,255,0.08) inset;
+      transition: transform .18s, box-shadow .18s;
+      animation: pulse-glow 2.6s ease-in-out infinite;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 12px 30px rgba(109,31,44,0.42), 0 0 0 1px rgba(255,255,255,0.08) inset; }
+      50% { box-shadow: 0 12px 34px rgba(109,31,44,0.62), 0 0 0 6px rgba(109,31,44,0.08), 0 0 0 1px rgba(255,255,255,0.08) inset; }
+    }
+    .btn-primary:hover, .btn-block:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(109,31,44,0.38); }
+    .btn-block { display: block; width: 100%; text-align: center; }
+    .price-inline { font-size: 17px; color: rgba(43,33,25,0.68); }
+    .price-inline strong { color: #2b2119; }
+    .hero figure {
+      margin: 0; position: relative;
+      border-radius: 16px;
+      padding: 0;
+      box-shadow: 0 30px 60px -20px rgba(43,33,25,0.35);
+    }
+    .hero figure img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px; border: 6px solid #fffdf8; }
+    .hero-tag {
+      position: absolute; bottom: -18px; left: 24px;
+      background: #2b2119; color: #f7f1e4;
+      font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500;
+      font-size: 15px; padding: 12px 22px; border-radius: 999px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 220px;
+      margin: 0 auto 8px;
+    }
+    .divider span:first-child,
+    .divider span:last-child { flex: 1; height: 1px; background: #c9a24b; }
+    .diamond { width: 7px; height: 7px; background: #c9a24b; transform: rotate(45deg); flex-shrink: 0; }
+
+    /* ── STATS ── */
+    .stats {
+      border-radius: 16px;
+      background: #2b2119;
+      color: #f7f1e4;
+      padding: 36px clamp(20px,4vw,40px);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      margin: 0 0 72px;
+      box-shadow: 0 24px 48px -24px rgba(43,33,25,0.5);
+    }
+    @media (max-width: 640px) {
+      .stats { grid-template-columns: repeat(2, 1fr); gap: 24px 0; }
+      .stats > div { border-left: none !important; }
+      .stats > div:nth-child(2n+1) { border-right: 1px solid rgba(247,241,228,0.15); }
+    }
+    .stats > div + div { border-left: 1px solid rgba(247,241,228,0.15); }
+    .stat-num { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 40px; color: #e3b04b; }
+    .stat-label { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,241,228,0.7); margin-top: 6px; }
+
+    /* ── SECTIONS ── */
+    .section-header { text-align: center; margin-bottom: 44px; }
+    .section-eyebrow { display: block; font-size: 14px; letter-spacing: 0.3em; text-transform: uppercase; color: #a9793a; margin-bottom: 14px; }
+    .section-header h2 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: clamp(30px, 3.2vw, 46px); }
+    .section-header h2 em { font-style: italic; color: #6d1f2c; }
+    .section-header p { max-width: 60ch; margin: 16px auto 0; font-size: 18px; color: rgba(43,33,25,0.68); }
+
+    /* ── OBJECIONES ── */
+    .objeciones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 80px; }
+    @media (max-width: 900px) { .objeciones { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .objeciones { grid-template-columns: 1fr; } }
+    .obj-card {
+      background: #fffdf8;
+      border: 1px solid rgba(109,31,44,0.14);
+      border-radius: 14px;
+      padding: 30px 26px;
+      box-shadow: 0 14px 30px -18px rgba(43,33,25,0.25);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .obj-card:hover { transform: translateY(-4px); box-shadow: 0 20px 36px -18px rgba(43,33,25,0.32); }
+    .obj-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(109,31,44,0.1); color: #6d1f2c;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin-bottom: 16px;
+    }
+    .obj-card h3 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 19px; margin-bottom: 8px; }
+    .obj-card p { font-size: 16px; color: rgba(43,33,25,0.68); }
+
+    /* ── PRUEBA SOCIAL / IG ── */
+    .social-section { padding: 0 0 80px; }
+    .ig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 900px; margin: 0 auto; }
+    @media (max-width: 700px) { .ig-grid { grid-template-columns: 1fr; } }
+    .ig-embed-wrap { border-radius: 14px; overflow: hidden; box-shadow: 0 20px 40px -22px rgba(43,33,25,0.3); }
+
+    /* ── CURSO / ACORDEON ── */
+    .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 56px; }
+    @media (max-width: 900px) { .features { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .features { grid-template-columns: 1fr; } }
+    .feature-card { border-radius: 14px; border: 1px solid rgba(109,31,44,0.18); padding: 26px; text-align: center; background: #fffdf8; }
+    .feature-card.highlight { border-color: #6d1f2c; background: linear-gradient(160deg, rgba(109,31,44,0.08), rgba(201,162,75,0.06)); }
+    .feature-num { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 28px; color: #a9793a; }
+    .feature-card.highlight .feature-num { color: #6d1f2c; }
+    .feature-card h3 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 19px; margin: 10px 0 0; }
+    .feature-card p { font-size: 16px; line-height: 1.6; margin: 8px 0 0; color: rgba(43,33,25,0.68); }
+
+    .modulos-acordeon { max-width: 780px; margin: 0 auto 80px; border-top: 1px solid rgba(169,121,58,0.35); }
+    .modulos-acordeon details { border-bottom: 1px solid rgba(169,121,58,0.35); }
+    .modulos-acordeon summary { padding: 22px 6px; display: flex; align-items: center; gap: 18px; }
+    .mod-index {
+      font-family: 'Playfair Display', serif; font-weight: 600; font-size: 15px;
+      color: #f7f1e4; background: #6d1f2c; width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .modulos-acordeon summary span.mod-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 19px; flex: 1; }
+    .modulos-acordeon summary .chev {
+      color: #f7f1e4; font-size: 16px; font-weight: 700; flex-shrink: 0;
+      width: 28px; height: 28px; border-radius: 50%; background: #6d1f2c;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mod-topics { list-style: none; margin: 0; padding: 0 6px 24px 68px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .mod-topics li { font-size: 15px; color: rgba(43,33,25,0.72); border: 1px solid rgba(109,31,44,0.22); border-radius: 999px; padding: 5px 14px; }
+
+    /* ── BONO ── */
+    .bono-section { padding: 0 0 80px; }
+    .bono-box {
+      max-width: 780px; margin: 0 auto;
+      background: linear-gradient(135deg, #6d1f2c, #4d1520);
+      color: #f7f1e4;
+      border-radius: 18px;
+      padding: 40px clamp(24px,5vw,52px);
+      display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center;
+      box-shadow: 0 30px 60px -26px rgba(109,31,44,0.55);
+    }
+    @media (max-width: 600px) { .bono-box { grid-template-columns: 1fr; text-align: center; } }
+    .bono-icon { font-size: 44px; color: #e3b04b; text-align: center; }
+    .bono-eyebrow { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #e3b04b; display: block; margin-bottom: 8px; }
+    .bono-box h3 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 24px; margin-bottom: 8px; }
+    .bono-box p { font-size: 17px; color: rgba(247,241,228,0.85); }
+
+    /* ── GARANTIA ── */
+    .garantia-section { padding: 0 0 80px; }
+    .garantia-box {
+      max-width: 780px; margin: 0 auto; text-align: center;
+      border: 1px solid #c9a24b; border-radius: 18px;
+      padding: 44px clamp(24px,5vw,52px);
+      background: repeating-linear-gradient(135deg, rgba(201,162,75,0.05) 0 14px, rgba(201,162,75,0.02) 14px 28px);
+    }
+    .garantia-sello {
+      width: 84px; height: 84px; border-radius: 50%;
+      border: 2px solid #6d1f2c; color: #6d1f2c;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-weight: 700; font-size: 15px; text-align: center; line-height: 1.2;
+      margin: 0 auto 20px;
+    }
+    .garantia-box h3 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 26px; margin-bottom: 12px; }
+    .garantia-box p { font-size: 17px; max-width: 52ch; margin: 0 auto; color: rgba(43,33,25,0.72); }
+
+    /* ── TESTIMONIOS ── */
+    .testimonial-section { padding: 0 0 80px; }
+    .testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 940px; margin: 40px auto 0; }
+    @media (max-width: 700px) { .testi-grid { grid-template-columns: 1fr; } }
+    .testi-card {
+      background: #fffdf8; border-radius: 14px; border: 1px solid rgba(109,31,44,0.14);
+      padding: 30px 28px; box-shadow: 0 14px 30px -18px rgba(43,33,25,0.22);
+    }
+    .testi-stars { color: #c9a24b; font-size: 15px; margin-bottom: 12px; letter-spacing: 3px; }
+    blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: 19px; line-height: 1.5; }
+    figcaption { font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: #a9793a; margin: 16px 0 0; }
+
+    /* ── PRECIO ── */
+    .precio-section { padding: 0 0 80px; }
+    .precio-box { max-width: 640px; margin: 0 auto; border-radius: 20px; border: 1px solid #c9a24b; position: relative; background: #fffdf8; box-shadow: 0 34px 64px -28px rgba(43,33,25,0.35); }
+    .precio-ribbon {
+      position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
+      background: #e3b04b; color: #2b2119;
+      font-family: 'Playfair Display', serif; font-weight: 600; font-size: 12px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 8px 22px; border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+    }
+    .precio-box-header { padding: 34px 36px 20px; text-align: center; }
+    .precio-box-header h3 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 24px; margin: 0 0 6px; }
+    .precio-box-header p { font-size: 16px; margin: 0; color: rgba(43,33,25,0.68); }
+    .precio-box-body { padding: 8px 36px 36px; }
+    .precio-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 0 0 30px; padding: 0; }
+    .precio-list li { font-size: 16px; padding-left: 28px; position: relative; }
+    .precio-list li::before { content: '◆'; position: absolute; left: 0; color: #a9793a; font-size: 10px; top: 4px; }
+    .precio-list li.bono-item { color: #6d1f2c; font-weight: 600; }
+    .precio-list li.bono-item::before { content: '★'; color: #e3b04b; }
+    .precio-amount { display: flex; align-items: baseline; justify-content: center; gap: 18px; margin-bottom: 4px; }
+    .precio-big { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 54px; color: #6d1f2c; }
+    .precio-big span { font-size: 24px; font-weight: 500; }
+    .precio-nota { font-size: 14px; text-align: center; color: rgba(43,33,25,0.65); margin: 0 0 26px; }
+    .precio-seguro { text-align: center; font-size: 14px; color: rgba(43,33,25,0.6); margin: 18px 0 0; padding-top: 18px; border-top: 1px solid rgba(169,121,58,0.3); }
+    .precio-seguro strong { color: #2b2119; }
+    .pago-metodos { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 14px 0 0; }
+    .pago-metodos span { font-size: 13px; color: rgba(43,33,25,0.55); letter-spacing: 0.04em; }
+    .pago-badge { font-size: 12px; letter-spacing: 0.06em; border: 1px solid rgba(109,31,44,0.2); border-radius: 999px; padding: 4px 12px; color: rgba(43,33,25,0.65); background: rgba(255,253,248,0.6); }
+
+    /* ── FAQ ── */
+    .faq-section { padding: 0 0 80px; }
+    .faq-list { max-width: 720px; margin: 0 auto; border-top: 1px solid rgba(169,121,58,0.35); }
+    .faq-list details { border-bottom: 1px solid rgba(169,121,58,0.35); }
+    .faq-list summary { padding: 22px 4px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-list summary span:first-child { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 19px; }
+    .faq-list summary .chev {
+      color: #f7f1e4; font-size: 16px; font-weight: 700; flex-shrink: 0;
+      width: 28px; height: 28px; border-radius: 50%; background: #6d1f2c;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .faq-list p { margin: 0; padding: 0 4px 22px; font-size: 16px; line-height: 1.7; color: rgba(43,33,25,0.7); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 36px 0 100px;
+      border-top: 1px solid rgba(109,31,44,0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 14px;
+      color: rgba(43,33,25,0.55);
+    }
+    footer .brand { font-family: 'Playfair Display', serif; }
+    footer .brand em { font-style: italic; color: #6d1f2c; }
+
+    /* ── STICKY MOBILE CTA ── */
+    .sticky-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
+      background: #fffdf8; border-top: 1px solid rgba(109,31,44,0.2);
+      padding: 12px 16px; display: none;
+      align-items: center; justify-content: space-between; gap: 12px;
+      box-shadow: 0 -8px 20px rgba(43,33,25,0.1);
+    }
+    .sticky-cta .price-inline { font-size: 15px; }
+    .sticky-cta .btn-primary { padding: 13px 22px; font-size: 13px; }
+    @media (max-width: 640px) { .sticky-cta { display: flex; } body { padding-bottom: 76px; } }
+
+    /* ── EXIT INTENT POPUP ── */
+    .exit-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(43,33,25,0.72);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .25s ease;
+    }
+    .exit-overlay.show { opacity: 1; pointer-events: auto; }
+    .exit-modal {
+      position: relative;
+      max-width: 460px; width: 100%;
+      background: #f7f1e4;
+      border: 1px solid #c9a24b;
+      border-radius: 18px;
+      padding: 40px clamp(24px,5vw,44px) 34px;
+      text-align: center;
+      box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5);
+      transform: scale(0.9) translateY(10px);
+      transition: transform .25s ease;
+    }
+    .exit-overlay.show .exit-modal { transform: scale(1) translateY(0); }
+    .exit-close {
+      position: absolute; top: 14px; right: 16px;
+      font-size: 22px; line-height: 1; color: rgba(43,33,25,0.45);
+      background: none; border: none; cursor: pointer; padding: 4px; z-index: 2;
+    }
+    .exit-close:hover { color: #6d1f2c; }
+    .exit-eyebrow { display: block; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #a9793a; margin-bottom: 14px; }
+    .exit-modal h3 {
+      font-family: 'Playfair Display', serif; font-weight: 600;
+      font-size: clamp(24px, 4vw, 30px); line-height: 1.2; margin-bottom: 14px;
+    }
+    .exit-modal h3 em { font-style: italic; color: #6d1f2c; }
+    .exit-modal p { font-size: 17px; color: rgba(43,33,25,0.72); margin-bottom: 24px; }
+    .exit-modal .btn-primary { width: 100%; text-align: center; margin-bottom: 14px; }
+    .exit-skip { font-size: 14px; color: rgba(43,33,25,0.5); text-decoration: underline; cursor: pointer; background: none; border: none; font-family: inherit; }
+
+    /* Badge de descuento (burst SVG) */
+    .exit-badge { width: 132px; height: 132px; margin: -10px auto 4px; filter: drop-shadow(0 10px 18px rgba(184,28,28,0.4)); }
+    .exit-badge svg { animation: badge-pulse 1.4s ease-in-out infinite; }
+    @keyframes badge-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+    /* Temporizador */
+    .exit-timer-label { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #b81c1c; font-weight: 700; margin-bottom: 8px; }
+    .exit-timer {
+      display: flex; gap: 8px; justify-content: center; margin-bottom: 22px;
+    }
+    .exit-timer .t-box {
+      background: #b81c1c; color: #ffffff;
+      font-family: 'Playfair Display', serif; font-weight: 700; font-size: 26px;
+      border-radius: 8px; padding: 8px 12px; min-width: 48px; text-align: center;
+      box-shadow: 0 6px 14px rgba(184,28,28,0.35);
+    }
+    .exit-timer .t-sep { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 26px; color: #6d1f2c; align-self: center; }
+
+    /* Código de cupón */
+    .exit-coupon {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      border: 2px dashed #b81c1c; border-radius: 10px;
+      padding: 12px 16px; margin-bottom: 20px;
+      background: rgba(184,28,28,0.06);
+    }
+    .exit-coupon code { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; letter-spacing: 0.04em; color: #b81c1c; }
+    .exit-coupon button {
+      font-family: 'Playfair Display', serif; font-weight: 700; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+      background: #b81c1c; color: #fff; border: none; border-radius: 6px; padding: 8px 14px; cursor: pointer; transition: background .15s;
+    }
+    .exit-coupon button:hover { background: #931414; }
+    .exit-coupon-note { font-size: 12px; color: rgba(43,33,25,0.55); margin: -12px 0 20px; }
+
+    .exit-modal .btn-urgent {
+      background: linear-gradient(135deg, #d4291f, #b81c1c 60%) !important;
+      box-shadow: 0 12px 30px rgba(184,28,28,0.45), 0 0 0 1px rgba(255,255,255,0.08) inset !important;
+      animation: pulse-glow-red 1.6s ease-in-out infinite !important;
+    }
+    @keyframes pulse-glow-red {
+      0%, 100% { box-shadow: 0 12px 30px rgba(184,28,28,0.45), 0 0 0 1px rgba(255,255,255,0.08) inset; }
+      50% { box-shadow: 0 12px 34px rgba(184,28,28,0.7), 0 0 0 7px rgba(184,28,28,0.12), 0 0 0 1px rgba(255,255,255,0.08) inset; }
+    }
+  </style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKRXFW78" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">Piano Academy <em style="font-style:italic;color:#6d1f2c">— Clara</em></span>
+  <a href="#curso">Curso</a>
+  <a href="#precio">Precio</a>
+  <a href="#faq">Preguntas</a>
+  <a href="#para-ti" class="btn-nav">Inscribirme</a>
+</nav>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="badge-row">
+        <span class="badge">★ +6,000 estudiantes</span>
+        <span class="badge">Garantía 7 días</span>
+      </div>
+      <h1>Toca tus primeras<br><em>10 piezas de piano</em><br>sin saber nada de música</h1>
+      <p class="hero-sub">Un método progresivo para adultos desde cero: lees partitura de verdad, entiendes la teoría en la práctica, y llegas a tocar 10 piezas completas. Sin atajos, sin videos sueltos — un camino claro, paso a paso.</p>
+      <div class="hero-cta">
+        <a href="#para-ti" class="btn-primary">Quiero aprender a tocar piano</a>
+        <span class="price-inline"><strong class="js-precio">Pago único</strong><span class="js-sufijo"></span> · acceso de por vida</span>
+      </div>
+    </div>
+    <figure>
+      <img src="carla.jpg" alt="Clara tocando el piano" width="600" height="750">
+      <span class="hero-tag">"Un método que sí funciona" — @claralunartist</span>
+    </figure>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div><div class="stat-num">+500K</div><div class="stat-label">Seguidores</div></div>
+    <div><div class="stat-num">+6,000</div><div class="stat-label">Estudiantes</div></div>
+    <div><div class="stat-num">9</div><div class="stat-label">Módulos</div></div>
+    <div><div class="stat-num">+7 hrs</div><div class="stat-label">Contenido en video</div></div>
+  </div>
+
+  <!-- OBJECIONES -->
+  <section id="para-ti" style="padding:0 0 8px">
+    <div class="section-header">
+      <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
+      <span class="section-eyebrow">¿Es para mí?</span>
+      <h2>Este curso es <em>para ti</em> si...</h2>
+    </div>
+    <div class="objeciones">
+      <div class="obj-card">
+        <div class="obj-icon">♪</div>
+        <h3>Nunca has tocado nada</h3>
+        <p>Empiezas desde cero absoluto. No necesitas saber leer música ni haber tomado clases antes.</p>
+      </div>
+      <div class="obj-card">
+        <div class="obj-icon">⌨</div>
+        <h3>No tienes un piano</h3>
+        <p>Con un teclado de 61 teclas o más ya puedes practicar todo el contenido del curso.</p>
+      </div>
+      <div class="obj-card">
+        <div class="obj-icon">⏱</div>
+        <h3>Sientes que no tienes tiempo</h3>
+        <p>Avanzas a tu ritmo, repites las clases las veces que quieras, acceso 24/7 desde cualquier dispositivo.</p>
+      </div>
+      <div class="obj-card">
+        <div class="obj-icon">✦</div>
+        <h3>Ya intentaste con YouTube</h3>
+        <p>Ahí encuentras videos sueltos. Acá encuentras un método: una secuencia lógica que sí te lleva a tocar y leer partitura.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRUEBA SOCIAL -->
+  <section class="social-section">
+    <div class="section-header">
+      <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
+      <span class="section-eyebrow">Comunidad</span>
+      <h2>Únete a los más de <em>6,000 estudiantes</em></h2>
+      <p>Aprende con Clara — pianista clásica, +500K seguidores en redes — y su comunidad privada de alumnos.</p>
+    </div>
+    <div class="ig-grid">
+      <div class="ig-embed-wrap">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/C8h772YuSIR/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;width:100%;"></blockquote>
+      </div>
+      <div class="ig-embed-wrap">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DEbJferOnym/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;width:100%;"></blockquote>
+      </div>
+    </div>
+    <script async src="//www.instagram.com/embed.js"></script>
+  </section>
+
+  <!-- CURSO -->
+  <section id="curso" style="padding:0 0 8px">
+    <div class="section-header">
+      <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
+      <span class="section-eyebrow">El curso</span>
+      <h2>9 módulos, <em>una lógica clara</em></h2>
+      <p>Avanzarás paso a paso, desde los conceptos básicos hasta tocar y leer 10 piezas completas para piano.</p>
+    </div>
+    <div class="features">
+      <div class="feature-card"><div class="feature-num">+100</div><h3>Páginas de guía</h3><p>Material de estudio completo dentro de la plataforma.</p></div>
+      <div class="feature-card"><div class="feature-num">7 hrs</div><h3>Contenido en video</h3><p>Un tutorial por tema, repite cuantas veces necesites.</p></div>
+      <div class="feature-card"><div class="feature-num">10</div><h3>Piezas reales</h3><p>Las leerás y tocarás todas desde partitura.</p></div>
+      <div class="feature-card highlight"><div class="feature-num">∞</div><h3>Acceso de por vida</h3><p>En Hotmart, desde cualquier dispositivo, sin fechas límite.</p></div>
+    </div>
+
+    <div class="modulos-acordeon">
+      <details open>
+        <summary><span class="mod-index">1</span><span class="mod-title">Conceptos básicos</span><span class="chev">›</span></summary>
+        <ul class="mod-topics"><li>Comunidad de alumnos</li><li>Componentes del sonido</li><li>Teoría musical</li><li>El piano</li><li>Las notas musicales</li><li>Prácticas</li></ul>
+      </details>
+      <details>
+        <summary><span class="mod-index">2</span><span class="mod-title">Intervalos</span><span class="chev">›</span></summary>
+        <ul class="mod-topics"><li>Intervalos musicales</li><li>Alteración de notas</li><li>Práctica</li></ul>
+      </details>
+      <details>
+        <summary><span class="mod-index">3</span><span class="mod-title">Acordes</span><span class="chev">›</span></summary>
+        <ul class="mod-topics"><li>Qué son</li><li>Tipos de acordes</li><li>Inversión de acordes</li><li>Práctica</li></ul>
+      </details>
+      <details>
+        <summary><span class="mod-index">4</span><span class="mod-title">Escalas</span><span class="chev">›</span></summary>
+        <ul class="mod-topics"><li>Escalas mayores</li><li>Círculo de quintas</li><li>Armaduras</li><li>Escala menor</li><li>Práctica</li></ul>
+      </details>
+      <details>
+        <summary><span class="mod-index">5</span><span class="mod-title">Funciones y grados</span><span class="chev">›</span></summary>
+        <ul class="mod-topics"><li>Los grados</li><li>Las funciones</li><li>Práctica</li></ul>
+      </details>
+      <details>
+        <summary><span class="mod-index">6</span><span class="mod-title">Ritmo y compás</span><span class="chev">›</span></summary>
+        <ul class="mod-topics"><li>Figuras rítmicas</li><li>El compás</li><li>Práctica</li></ul>
+      </details>
+      <details>
+        <summary><span class="mod-index">7</span><span class="mod-title">Análisis musical</span><span class="chev">›</span></summary>
+        <ul class="mod-topics"><li>Analizando piezas</li><li>Práctica</li></ul>
+      </details>
+      <details>
+        <summary><span class="mod-index">8</span><span class="mod-title">Leer al piano</span><span class="chev">›</span></summary>
+        <ul class="mod-topics"><li>Instrucciones para tocar</li><li>Ejercicios de lectura</li></ul>
+      </details>
+      <details>
+        <summary><span class="mod-index">9</span><span class="mod-title">Tocando tus primeras piezas</span><span class="chev">›</span></summary>
+        <ul class="mod-topics"><li>10 piezas completas leídas desde partitura</li></ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- BONO -->
+  <section class="bono-section">
+    <div class="bono-box">
+      <div class="bono-icon">🎁</div>
+      <div>
+        <span class="bono-eyebrow">Bono incluido</span>
+        <h3>30 ejercicios de coordinación para tocar con ambas manos</h3>
+        <p>Al inscribirte al curso, este bono queda incluido sin costo adicional — para que domines la independencia de manos más rápido.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonial-section">
+    <div class="section-header">
+      <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
+      <span class="section-eyebrow">Estudiantes</span>
+      <h2>Lo que dicen <em>quienes ya empezaron</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Las clases son muy amenas, tiene excelentes bases y se entiende muy bien. La forma de explicar es apta para cualquier persona que quiera aprender."</blockquote>
+        <figcaption>— Fabian Sanchez, compra verificada</figcaption>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Nunca pensé que a mi edad podría leer una partitura completa. El método va paso a paso y de verdad se entiende."</blockquote>
+        <figcaption>— Alumna verificada, Hotmart</figcaption>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="garantia-section">
+    <div class="garantia-box">
+      <div class="garantia-sello">7 DÍAS<br>100%</div>
+      <h3>Garantía de satisfacción total</h3>
+      <p>Si en los primeros 7 días sientes que el curso no es para ti, Hotmart te devuelve el 100% de tu dinero. Sin condiciones, sin preguntas.</p>
+    </div>
+  </section>
+
+  <!-- PRECIO -->
+  <section class="precio-section" id="precio">
+    <div class="section-header">
+      <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
+      <span class="section-eyebrow">Inversión</span>
+      <h2>Un precio, <em>todo incluido</em></h2>
+    </div>
+    <div class="precio-box">
+      <span class="precio-ribbon">Acceso de por vida</span>
+      <div class="precio-box-header">
+        <h3>Piano Academy — Clara</h3>
+        <p>Acceso inmediato en Hotmart · pago único · de por vida</p>
+      </div>
+      <div class="precio-box-body">
+        <ul class="precio-list">
+          <li>9 módulos progresivos — de cero a tocar tus primeras piezas</li>
+          <li>+100 páginas de guía de estudio</li>
+          <li>+7 horas de video — un tutorial por tema</li>
+          <li>10 piezas reales que tocarás leyendo partitura</li>
+          <li>Acceso a la comunidad privada de alumnos</li>
+          <li class="bono-item">Bono: 30 ejercicios de coordinación a dos manos</li>
+          <li>Acceso de por vida en Hotmart — sin suscripciones</li>
+        </ul>
+        <div class="precio-amount">
+          <div class="precio-big js-precio-grande">Pago único</div>
+        </div>
+        <p class="precio-nota js-cuotas" style="font-size:16px;color:#2b2119;margin-bottom:6px;display:none"></p>
+        <p class="precio-nota">Pagas en tu moneda, una sola vez. Con tarjeta puedes dividirlo en cuotas, o pagar en efectivo.</p>
+        <a href="https://pay.hotmart.com/V93892706E?checkoutMode=10" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('trackCustom','ClicComprar')" class="btn-block">Obtener el curso completo</a>
+        <p class="precio-seguro">Pago 100% seguro a través de Hotmart · acceso inmediato · <strong>garantía de 7 días</strong></p>
+        <div class="pago-metodos">
+          <span>Aceptamos:</span>
+          <span class="pago-badge">Tarjeta de crédito</span>
+          <span class="pago-badge">Tarjeta de débito</span>
+          <span class="pago-badge">Pago en cuotas</span>
+          <span class="pago-badge">Pago en efectivo</span>
+          <span class="pago-badge">PayPal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-header">
+      <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
+      <span class="section-eyebrow">Preguntas frecuentes</span>
+      <h2>Todo lo que <em>necesitas saber</em></h2>
+    </div>
+    <div class="faq-list">
+      <details><summary><span>¿Necesito experiencia musical previa?</span><span class="chev">›</span></summary><p>No. El curso empieza desde cero absoluto. No necesitas saber nada de música ni haber tocado un instrumento antes.</p></details>
+      <details><summary><span>¿No es lo mismo que ver tutoriales gratis en YouTube?</span><span class="chev">›</span></summary><p>En YouTube encuentras videos sueltos, sin orden ni continuidad. Acá sigues un método progresivo de 9 módulos donde cada clase construye sobre la anterior, con material de estudio, ejercicios y una comunidad — para que realmente aprendas a leer partitura, no solo a repetir movimientos.</p></details>
+      <details><summary><span>¿Cómo accedo al curso?</span><span class="chev">›</span></summary><p>Al completar tu compra, Hotmart te envía tus accesos por correo en segundos. Entras a la plataforma y todo el contenido está ahí, disponible desde tu celular, tablet o computadora.</p></details>
+      <details><summary><span>¿Es pago único o mensual?</span><span class="chev">›</span></summary><p>Pago único. Acceso de por vida al curso completo sin ningún cobro adicional, ni suscripciones. Si prefieres, con tarjeta de crédito puedes dividir ese pago en cuotas.</p></details>
+      <details><summary><span>¿Necesito tener un piano?</span><span class="chev">›</span></summary><p>No necesitas un piano de cola. Cualquier teclado con 61 teclas o más es suficiente para practicar todo el contenido.</p></details>
+      <details><summary><span>¿Qué métodos de pago aceptan?</span><span class="chev">›</span></summary><p>Tarjeta de crédito (también en cuotas) y débito, pago en efectivo y los métodos locales de tu país, a través de Hotmart — la plataforma de cursos más grande de Latinoamérica. El precio aparece en tu moneda.</p></details>
+      <details><summary><span>¿Tiene garantía?</span><span class="chev">›</span></summary><p>Sí. Tienes 7 días de garantía. Si el curso no es para ti, Hotmart te devuelve el 100% de tu dinero, sin preguntas.</p></details>
+      <details><summary><span>¿Quién es la instructora?</span><span class="chev">›</span></summary><p>Clara, pianista clásica con más de 500,000 seguidores en redes y más de 6,000 estudiantes que ya han tomado este curso.</p></details>
+    </div>
+  </section>
+
+  <div class="divider"><span></span><span class="diamond"></span><span></span></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="brand">Piano Academy <em>— Clara</em></span>
+    <a href="mailto:cursos@claraluna.online">cursos@claraluna.online</a>
+    <span>© 2026 · Todos los derechos reservados</span>
+  </footer>
+
+</div>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <span class="price-inline"><strong class="js-precio">Pago único</strong><span class="js-sufijo"></span></span>
+  <a href="https://pay.hotmart.com/V93892706E?checkoutMode=10" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('trackCustom','ClicComprar')" class="btn-primary">Inscribirme</a>
+</div>
+
+<!-- EXIT INTENT POPUP -->
+<div class="exit-overlay" id="exitOverlay">
+  <div class="exit-modal">
+    <button class="exit-close" id="exitClose" aria-label="Cerrar">×</button>
+    <span class="exit-eyebrow">Espera un momento</span>
+    <h3>No te pierdas <em>esta oferta</em></h3>
+    <p>Tu cupo a Piano Academy sigue disponible — <span class="js-precio">pago único</span>, acceso de por vida y garantía de 7 días. Termina tu inscripción antes de irte.</p>
+    <a href="https://pay.hotmart.com/V93892706E?checkoutMode=10" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('trackCustom','ClicComprar')" class="btn-primary">Sí, quiero mi acceso</a>
+    <button class="exit-skip" id="exitSkip">No gracias, seguir viendo</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var overlay = document.getElementById('exitOverlay');
+  var shown = false;
+
+  function showPopup() {
+    if (shown || sessionStorage.getItem('exitPopupShown')) return;
+    shown = true;
+    sessionStorage.setItem('exitPopupShown', '1');
+    overlay.classList.add('show');
+  }
+  function hidePopup() { overlay.classList.remove('show'); }
+
+  document.getElementById('exitClose').addEventListener('click', hidePopup);
+  document.getElementById('exitSkip').addEventListener('click', hidePopup);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) hidePopup(); });
+
+  // Desktop: el mouse sale por la parte superior de la ventana (va a cerrar/cambiar de pestaña)
+  document.addEventListener('mouseout', function (e) {
+    if (!e.relatedTarget && e.clientY <= 0) showPopup();
+  });
+
+  // Móvil: no hay mouse — usamos scroll rápido hacia arriba tras haber avanzado, señal típica de abandono
+  var maxScroll = 0, lastY = window.scrollY, lastT = Date.now();
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY, t = Date.now();
+    maxScroll = Math.max(maxScroll, y);
+    var dt = t - lastT;
+    if (dt > 0) {
+      var speed = (lastY - y) / dt; // px/ms hacia arriba
+      if (speed > 1.2 && maxScroll > window.innerHeight * 0.6 && y < window.innerHeight * 0.5) {
+        showPopup();
+      }
+    }
+    lastY = y; lastT = t;
+  }, { passive: true });
+})();
+</script>
+
+<!-- ═══════════ PRECIO SEGÚN EL PAÍS ═══════════
+     Clara: completa aquí lo que muestra tu checkout de Hotmart en cada país.
+     - monto: el número tal cual aparece en el checkout (con sus puntos o comas).
+     - cuotas: el texto de la cuota más larga, por ejemplo "12 cuotas de $11.164". Si no hay cuotas, deja "".
+     Si dejas "monto" vacío, en ese país la página dice "Pago único" sin número (no muestra un precio equivocado).
+     Para quien no está en México ni en Colombia se usa OTRO. -->
+<script>
+var PRECIOS = {
+  MX:   { monto: "",        moneda: "MXN", cuotas: "" },
+  CO:   { monto: "133.970", moneda: "COP", cuotas: "12 cuotas de $11.164" },
+  OTRO: { monto: "",        moneda: "USD", cuotas: "" }
+};
+
+(function () {
+  var pais = "OTRO";
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+    var mx = ["America/Mexico_City","America/Cancun","America/Monterrey","America/Merida","America/Chihuahua",
+              "America/Ciudad_Juarez","America/Hermosillo","America/Mazatlan","America/Tijuana","America/Matamoros",
+              "America/Ojinaga","America/Bahia_Banderas"];
+    if (mx.indexOf(tz) !== -1) pais = "MX";
+    else if (tz === "America/Bogota") pais = "CO";
+  } catch (e) {}
+  if (pais === "OTRO") {
+    var lang = (navigator.language || "").toUpperCase();
+    if (lang.slice(-2) === "MX") pais = "MX";
+    else if (lang.slice(-2) === "CO") pais = "CO";
+  }
+
+  var p = PRECIOS[pais] || PRECIOS.OTRO;
+  if (!p.monto) return; // sin precio cargado: se queda el texto "Pago único"
+
+  var precio = "$" + p.monto + " " + p.moneda;
+  document.querySelectorAll(".js-precio").forEach(function (el) { el.textContent = precio; });
+  document.querySelectorAll(".js-sufijo").forEach(function (el) { el.textContent = " · pago único"; });
+  document.querySelectorAll(".js-precio-grande").forEach(function (el) {
+    el.innerHTML = "$" + p.monto + " <span>" + p.moneda + "</span>";
+  });
+  if (p.cuotas) {
+    document.querySelectorAll(".js-cuotas").forEach(function (el) {
+      el.textContent = "o hasta " + p.cuotas + " con tarjeta de crédito";
+      el.style.display = "block";
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
