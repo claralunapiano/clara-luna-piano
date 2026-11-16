@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Piano Academy — Clara | Toca piano y lee partituras desde cero</title>
-  <meta name="description" content="Método progresivo para adultos: toca tus primeras 10 piezas leyendo partitura, desde cero. 9 módulos, +7 horas de video, acceso de por vida. $44 USD pago único.">
+  <meta name="description" content="Método progresivo para adultos: toca tus primeras 10 piezas leyendo partitura, desde cero. 9 módulos, +7 horas de video, acceso de por vida. Pago único, en tu moneda.">
   <meta property="og:title" content="Piano Academy — Clara">
   <meta property="og:description" content="Un método progresivo para tocar piano y leer partituras desde cero. 9 módulos, +7 horas de video, acceso de por vida.">
   <meta property="og:type" content="website">
@@ -31,7 +31,7 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1317056650594410');
   fbq('track', 'PageView');
-  fbq('track', 'ViewContent', {content_name: 'Curso Piano Hotmart', value: 44, currency: 'USD'});
+  fbq('track', 'ViewContent', {content_name: 'Curso Piano Hotmart'});
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1317056650594410&ev=PageView&noscript=1"
@@ -431,7 +431,7 @@
     .exit-close {
       position: absolute; top: 14px; right: 16px;
       font-size: 22px; line-height: 1; color: rgba(43,33,25,0.45);
-      background: none; border: none; cursor: pointer; padding: 4px;
+      background: none; border: none; cursor: pointer; padding: 4px; z-index: 2;
     }
     .exit-close:hover { color: #6d1f2c; }
     .exit-eyebrow { display: block; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #a9793a; margin-bottom: 14px; }
@@ -443,6 +443,49 @@
     .exit-modal p { font-size: 17px; color: rgba(43,33,25,0.72); margin-bottom: 24px; }
     .exit-modal .btn-primary { width: 100%; text-align: center; margin-bottom: 14px; }
     .exit-skip { font-size: 14px; color: rgba(43,33,25,0.5); text-decoration: underline; cursor: pointer; background: none; border: none; font-family: inherit; }
+
+    /* Badge de descuento (burst SVG) */
+    .exit-badge { width: 132px; height: 132px; margin: -10px auto 4px; filter: drop-shadow(0 10px 18px rgba(184,28,28,0.4)); }
+    .exit-badge svg { animation: badge-pulse 1.4s ease-in-out infinite; }
+    @keyframes badge-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+    /* Temporizador */
+    .exit-timer-label { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #b81c1c; font-weight: 700; margin-bottom: 8px; }
+    .exit-timer {
+      display: flex; gap: 8px; justify-content: center; margin-bottom: 22px;
+    }
+    .exit-timer .t-box {
+      background: #b81c1c; color: #ffffff;
+      font-family: 'Playfair Display', serif; font-weight: 700; font-size: 26px;
+      border-radius: 8px; padding: 8px 12px; min-width: 48px; text-align: center;
+      box-shadow: 0 6px 14px rgba(184,28,28,0.35);
+    }
+    .exit-timer .t-sep { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 26px; color: #6d1f2c; align-self: center; }
+
+    /* Código de cupón */
+    .exit-coupon {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      border: 2px dashed #b81c1c; border-radius: 10px;
+      padding: 12px 16px; margin-bottom: 20px;
+      background: rgba(184,28,28,0.06);
+    }
+    .exit-coupon code { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; letter-spacing: 0.04em; color: #b81c1c; }
+    .exit-coupon button {
+      font-family: 'Playfair Display', serif; font-weight: 700; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+      background: #b81c1c; color: #fff; border: none; border-radius: 6px; padding: 8px 14px; cursor: pointer; transition: background .15s;
+    }
+    .exit-coupon button:hover { background: #931414; }
+    .exit-coupon-note { font-size: 12px; color: rgba(43,33,25,0.55); margin: -12px 0 20px; }
+
+    .exit-modal .btn-urgent {
+      background: linear-gradient(135deg, #d4291f, #b81c1c 60%) !important;
+      box-shadow: 0 12px 30px rgba(184,28,28,0.45), 0 0 0 1px rgba(255,255,255,0.08) inset !important;
+      animation: pulse-glow-red 1.6s ease-in-out infinite !important;
+    }
+    @keyframes pulse-glow-red {
+      0%, 100% { box-shadow: 0 12px 30px rgba(184,28,28,0.45), 0 0 0 1px rgba(255,255,255,0.08) inset; }
+      50% { box-shadow: 0 12px 34px rgba(184,28,28,0.7), 0 0 0 7px rgba(184,28,28,0.12), 0 0 0 1px rgba(255,255,255,0.08) inset; }
+    }
   </style>
 </head>
 <body>
@@ -470,7 +513,7 @@
       <p class="hero-sub">Un método progresivo para adultos desde cero: lees partitura de verdad, entiendes la teoría en la práctica, y llegas a tocar 10 piezas completas. Sin atajos, sin videos sueltos — un camino claro, paso a paso.</p>
       <div class="hero-cta">
         <a href="#para-ti" class="btn-primary">Quiero aprender a tocar piano</a>
-        <span class="price-inline"><strong>$44 USD</strong> · pago único · acceso de por vida</span>
+        <span class="price-inline"><strong class="js-precio">Pago único</strong><span class="js-sufijo"></span> · acceso de por vida</span>
       </div>
     </div>
     <figure>
@@ -630,7 +673,7 @@
     <div class="garantia-box">
       <div class="garantia-sello">7 DÍAS<br>100%</div>
       <h3>Garantía de satisfacción total</h3>
-      <p>Si completas los módulos y sientes que el curso no era para ti, Hotmart te devuelve el 100% de tu dinero. Sin condiciones, sin preguntas.</p>
+      <p>Si en los primeros 7 días sientes que el curso no es para ti, Hotmart te devuelve el 100% de tu dinero. Sin condiciones, sin preguntas.</p>
     </div>
   </section>
 
@@ -658,16 +701,18 @@
           <li>Acceso de por vida en Hotmart — sin suscripciones</li>
         </ul>
         <div class="precio-amount">
-          <div class="precio-big">$44 <span>USD</span></div>
+          <div class="precio-big js-precio-grande">Pago único</div>
         </div>
-        <p class="precio-nota">Precio en dólares. Hotmart lo convierte automáticamente a tu moneda local al momento de pagar — sin sorpresas.</p>
-        <a href="https://pay.hotmart.com/V93892706E?checkoutMode=10" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout',{value:44,currency:'USD'})" class="btn-block">Obtener el curso completo</a>
+        <p class="precio-nota js-cuotas" style="font-size:16px;color:#2b2119;margin-bottom:6px;display:none"></p>
+        <p class="precio-nota">Pagas en tu moneda, una sola vez. Con tarjeta puedes dividirlo en cuotas, o pagar en efectivo.</p>
+        <a href="https://pay.hotmart.com/V93892706E?checkoutMode=10" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('trackCustom','ClicComprar')" class="btn-block">Obtener el curso completo</a>
         <p class="precio-seguro">Pago 100% seguro a través de Hotmart · acceso inmediato · <strong>garantía de 7 días</strong></p>
         <div class="pago-metodos">
           <span>Aceptamos:</span>
           <span class="pago-badge">Tarjeta de crédito</span>
           <span class="pago-badge">Tarjeta de débito</span>
-          <span class="pago-badge">Métodos locales</span>
+          <span class="pago-badge">Pago en cuotas</span>
+          <span class="pago-badge">Pago en efectivo</span>
           <span class="pago-badge">PayPal</span>
         </div>
       </div>
@@ -685,9 +730,9 @@
       <details><summary><span>¿Necesito experiencia musical previa?</span><span class="chev">›</span></summary><p>No. El curso empieza desde cero absoluto. No necesitas saber nada de música ni haber tocado un instrumento antes.</p></details>
       <details><summary><span>¿No es lo mismo que ver tutoriales gratis en YouTube?</span><span class="chev">›</span></summary><p>En YouTube encuentras videos sueltos, sin orden ni continuidad. Acá sigues un método progresivo de 9 módulos donde cada clase construye sobre la anterior, con material de estudio, ejercicios y una comunidad — para que realmente aprendas a leer partitura, no solo a repetir movimientos.</p></details>
       <details><summary><span>¿Cómo accedo al curso?</span><span class="chev">›</span></summary><p>Al completar tu compra, Hotmart te envía tus accesos por correo en segundos. Entras a la plataforma y todo el contenido está ahí, disponible desde tu celular, tablet o computadora.</p></details>
-      <details><summary><span>¿Es pago único o mensual?</span><span class="chev">›</span></summary><p>Pago único. Acceso de por vida al curso completo sin ningún cobro adicional, ni suscripciones.</p></details>
+      <details><summary><span>¿Es pago único o mensual?</span><span class="chev">›</span></summary><p>Pago único. Acceso de por vida al curso completo sin ningún cobro adicional, ni suscripciones. Si prefieres, con tarjeta de crédito puedes dividir ese pago en cuotas.</p></details>
       <details><summary><span>¿Necesito tener un piano?</span><span class="chev">›</span></summary><p>No necesitas un piano de cola. Cualquier teclado con 61 teclas o más es suficiente para practicar todo el contenido.</p></details>
-      <details><summary><span>¿Qué métodos de pago aceptan?</span><span class="chev">›</span></summary><p>Tarjeta de crédito y débito, y los métodos locales de tu país, a través de Hotmart — la plataforma de cursos más grande de Latinoamérica.</p></details>
+      <details><summary><span>¿Qué métodos de pago aceptan?</span><span class="chev">›</span></summary><p>Tarjeta de crédito (también en cuotas) y débito, pago en efectivo y los métodos locales de tu país, a través de Hotmart — la plataforma de cursos más grande de Latinoamérica. El precio aparece en tu moneda.</p></details>
       <details><summary><span>¿Tiene garantía?</span><span class="chev">›</span></summary><p>Sí. Tienes 7 días de garantía. Si el curso no es para ti, Hotmart te devuelve el 100% de tu dinero, sin preguntas.</p></details>
       <details><summary><span>¿Quién es la instructora?</span><span class="chev">›</span></summary><p>Clara, pianista clásica con más de 500,000 seguidores en redes y más de 6,000 estudiantes que ya han tomado este curso.</p></details>
     </div>
@@ -706,8 +751,8 @@
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta">
-  <span class="price-inline"><strong>$44 USD</strong> · pago único</span>
-  <a href="https://pay.hotmart.com/V93892706E?checkoutMode=10" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout',{value:44,currency:'USD'})" class="btn-primary">Inscribirme</a>
+  <span class="price-inline"><strong class="js-precio">Pago único</strong><span class="js-sufijo"></span></span>
+  <a href="https://pay.hotmart.com/V93892706E?checkoutMode=10" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('trackCustom','ClicComprar')" class="btn-primary">Inscribirme</a>
 </div>
 
 <!-- EXIT INTENT POPUP -->
@@ -716,8 +761,8 @@
     <button class="exit-close" id="exitClose" aria-label="Cerrar">×</button>
     <span class="exit-eyebrow">Espera un momento</span>
     <h3>No te pierdas <em>esta oferta</em></h3>
-    <p>Tu cupo a Piano Academy sigue disponible — $44 USD, pago único, acceso de por vida y garantía de 7 días. Termina tu inscripción antes de irte.</p>
-    <a href="https://pay.hotmart.com/V93892706E?checkoutMode=10" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout',{value:44,currency:'USD'})" class="btn-primary">Sí, quiero mi acceso</a>
+    <p>Tu cupo a Piano Academy sigue disponible — <span class="js-precio">pago único</span>, acceso de por vida y garantía de 7 días. Termina tu inscripción antes de irte.</p>
+    <a href="https://pay.hotmart.com/V93892706E?checkoutMode=10" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('trackCustom','ClicComprar')" class="btn-primary">Sí, quiero mi acceso</a>
     <button class="exit-skip" id="exitSkip">No gracias, seguir viendo</button>
   </div>
 </div>
@@ -758,6 +803,53 @@
     }
     lastY = y; lastT = t;
   }, { passive: true });
+})();
+</script>
+
+<!-- ═══════════ PRECIO SEGÚN EL PAÍS ═══════════
+     Clara: completa aquí lo que muestra tu checkout de Hotmart en cada país.
+     - monto: el número tal cual aparece en el checkout (con sus puntos o comas).
+     - cuotas: el texto de la cuota más larga, por ejemplo "12 cuotas de $11.164". Si no hay cuotas, deja "".
+     Si dejas "monto" vacío, en ese país la página dice "Pago único" sin número (no muestra un precio equivocado).
+     Para quien no está en México ni en Colombia se usa OTRO. -->
+<script>
+var PRECIOS = {
+  MX:   { monto: "822.44",  moneda: "MXN", cuotas: "6 cuotas de $151.77" },
+  CO:   { monto: "133.970", moneda: "COP", cuotas: "12 cuotas de $11.164" },
+  OTRO: { monto: "",        moneda: "USD", cuotas: "" }
+};
+
+(function () {
+  var pais = "OTRO";
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+    var mx = ["America/Mexico_City","America/Cancun","America/Monterrey","America/Merida","America/Chihuahua",
+              "America/Ciudad_Juarez","America/Hermosillo","America/Mazatlan","America/Tijuana","America/Matamoros",
+              "America/Ojinaga","America/Bahia_Banderas"];
+    if (mx.indexOf(tz) !== -1) pais = "MX";
+    else if (tz === "America/Bogota") pais = "CO";
+  } catch (e) {}
+  if (pais === "OTRO") {
+    var lang = (navigator.language || "").toUpperCase();
+    if (lang.slice(-2) === "MX") pais = "MX";
+    else if (lang.slice(-2) === "CO") pais = "CO";
+  }
+
+  var p = PRECIOS[pais] || PRECIOS.OTRO;
+  if (!p.monto) return; // sin precio cargado: se queda el texto "Pago único"
+
+  var precio = "$" + p.monto + " " + p.moneda;
+  document.querySelectorAll(".js-precio").forEach(function (el) { el.textContent = precio; });
+  document.querySelectorAll(".js-sufijo").forEach(function (el) { el.textContent = " · pago único"; });
+  document.querySelectorAll(".js-precio-grande").forEach(function (el) {
+    el.innerHTML = "$" + p.monto + " <span>" + p.moneda + "</span>";
+  });
+  if (p.cuotas) {
+    document.querySelectorAll(".js-cuotas").forEach(function (el) {
+      el.textContent = "o hasta " + p.cuotas + " con tarjeta de crédito";
+      el.style.display = "block";
+    });
+  }
 })();
 </script>
 
