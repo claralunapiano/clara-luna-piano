@@ -29,12 +29,12 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1317056650594410');
+  fbq('init', '1142249788981896');
   fbq('track', 'PageView');
   fbq('track', 'ViewContent', {content_name: 'Piano Academy — 4 cursos', value: 739, currency: 'MXN'});
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1317056650594410&ev=PageView&noscript=1"
+  src="https://www.facebook.com/tr?id=1142249788981896&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
 
@@ -365,6 +365,51 @@
     .pago-metodos span { font-size: 13px; color: rgba(43,33,25,0.55); letter-spacing: 0.04em; }
     .pago-badge { font-size: 12px; letter-spacing: 0.06em; border: 1px solid rgba(109,31,44,0.2); border-radius: 999px; padding: 4px 12px; color: rgba(43,33,25,0.65); background: rgba(255,253,248,0.6); }
 
+    /* ── LECCIÓN GRATIS ── */
+    .leccion-section { padding: 0 0 80px; }
+    .video-wrap {
+      max-width: 860px; margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(201,162,75,0.55);
+      box-shadow: 0 30px 60px -26px rgba(43,33,25,0.45);
+      background: #2b2119;
+    }
+    .video-wrap iframe { width: 100%; height: 100%; display: block; border: 0; }
+    .leccion-datos {
+      max-width: 860px; margin: 26px auto 0;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    @media (max-width: 700px) { .leccion-datos { grid-template-columns: 1fr; gap: 14px; } }
+    .leccion-datos > div {
+      border-left: 2px solid #c9a24b; padding-left: 16px;
+    }
+    .leccion-datos strong {
+      display: block; font-family: 'Playfair Display', serif; font-weight: 600; font-size: 18px; margin-bottom: 2px;
+    }
+    .leccion-datos span { font-size: 15px; color: rgba(43,33,25,0.68); line-height: 1.5; }
+    .hero-link {
+      display: inline-block; margin-top: 14px; font-size: 16px;
+      color: #6d1f2c; text-decoration: underline; text-underline-offset: 3px;
+    }
+
+    /* ── DESGLOSE DE VALOR ── */
+    .precio-list li.item-precio { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; }
+    .item-monto { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 15px; color: #a9793a; white-space: nowrap; }
+    .valor-total {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+      border-top: 1px solid rgba(169,121,58,0.35);
+      margin: 0 0 22px; padding-top: 14px;
+      font-size: 15px; color: rgba(43,33,25,0.62);
+    }
+    .valor-total s { font-family: 'Playfair Display', serif; font-size: 20px; color: rgba(43,33,25,0.45); }
+    .descuento-badge {
+      background: #6d1f2c; color: #f7f1e4;
+      font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px;
+      letter-spacing: 0.08em; padding: 7px 14px; border-radius: 999px;
+      box-shadow: 0 8px 18px -8px rgba(109,31,44,0.7);
+    }
+
     /* ── FAQ ── */
     .faq-section { padding: 0 0 80px; }
     .faq-list { max-width: 720px; margin: 0 auto; border-top: 1px solid rgba(169,121,58,0.35); }
@@ -494,6 +539,7 @@
 <!-- NAV -->
 <nav>
   <span class="nav-brand">Piano Academy <em style="font-style:italic;color:#6d1f2c">— Clara</em></span>
+  <a href="#leccion">Lección gratis</a>
   <a href="#curso">Curso</a>
   <a href="#precio">Precio</a>
   <a href="#faq">Preguntas</a>
@@ -515,6 +561,7 @@
         <a href="#para-ti" class="btn-primary">Quiero aprender a tocar piano</a>
         <span class="price-inline"><strong class="js-precio">$739 MXN</strong> · pago único · 4 cursos</span>
       </div>
+      <a href="#leccion" class="hero-link">▸ O mira una clase completa del curso, gratis</a>
     </div>
     <figure>
       <img src="carla.jpg" alt="Clara tocando el piano" width="600" height="750">
@@ -529,6 +576,24 @@
     <div><div class="stat-num">9</div><div class="stat-label">Módulos</div></div>
     <div><div class="stat-num">+7 hrs</div><div class="stat-label">Contenido en video</div></div>
   </div>
+
+  <!-- LECCIÓN GRATIS -->
+  <section class="leccion-section" id="leccion">
+    <div class="section-header">
+      <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
+      <span class="section-eyebrow">Lección de muestra</span>
+      <h2>Prueba el curso <em>gratis</em></h2>
+      <p>Antes de decidir, mira una clase completa, tal cual está dentro del curso: las notas musicales, el pentagrama y las claves de Sol y Fa.</p>
+    </div>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/uBQQpgTXkFo" title="Lección de muestra — Las notas musicales" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="leccion-datos">
+      <div><strong>Lección 5</strong><span>Las notas musicales: pentagrama y claves de Sol y Fa</span></div>
+      <div><strong>16 minutos</strong><span>Clase completa, con explicación y ejercicios</span></div>
+      <div><strong>Desde cero</strong><span>No necesitas saber nada de música para seguirla</span></div>
+    </div>
+  </section>
 
   <!-- OBJECIONES -->
   <section id="para-ti" style="padding:0 0 8px">
@@ -691,11 +756,14 @@
         <p>4 cursos en 1 · pago único · descarga inmediata</p>
       </div>
       <div class="precio-box-body">
+        <ul class="precio-list" style="margin-bottom:16px">
+          <li class="item-precio"><span><strong>Guía completa Vol. I</strong> — Cómo tocar piano y leer partituras, en PDF</span><b class="item-monto">$978</b></li>
+          <li class="item-precio"><span><strong>Guía completa Vol. II</strong> — Nivel intermedio-avanzado, en PDF</span><b class="item-monto">$670</b></li>
+          <li class="item-precio bono-item"><span><strong>30 ejercicios de coordinación</strong> — Vol. I: PDF con el video de cada ejercicio</span><b class="item-monto">$100</b></li>
+          <li class="item-precio bono-item"><span><strong>30 ejercicios de coordinación</strong> — Vol. II: PDF con el video de cada ejercicio</span><b class="item-monto">$100</b></li>
+        </ul>
+        <div class="valor-total"><span>Valor comprándolos por separado</span><s>$1,848 MXN</s></div>
         <ul class="precio-list">
-          <li><strong>Guía completa Vol. I</strong> — Cómo tocar piano y leer partituras, en PDF</li>
-          <li><strong>Guía completa Vol. II</strong> — Nivel intermedio-avanzado, en PDF</li>
-          <li class="bono-item"><strong>30 ejercicios de coordinación</strong> — a dos manos, Vol. I: PDF con el video de cada ejercicio</li>
-          <li class="bono-item"><strong>30 ejercicios de coordinación</strong> — a dos manos, Vol. II: PDF con el video de cada ejercicio</li>
           <li>+100 páginas de guía de estudio · +7 horas de video, un tutorial por tema</li>
           <li>10 piezas reales que tocarás leyendo partitura</li>
           <li>Acceso a la comunidad privada de alumnos</li>
@@ -703,8 +771,9 @@
         </ul>
         <div class="precio-amount">
           <div class="precio-big js-precio-grande">$739 <span>MXN</span></div>
+          <span class="descuento-badge">−60%</span>
         </div>
-        <p class="precio-nota">Un solo pago por los 4 cursos. Recibes los links de descarga en tu correo, en segundos.</p>
+        <p class="precio-nota">Los 4 cursos juntos, en un solo pago. <strong>Ahorras $1,109 MXN.</strong> Recibes los links de descarga en tu correo, en segundos.</p>
         <a href="https://buy.stripe.com/14A14m8bz8qC73V2wx67S02" target="_blank" rel="noopener" onclick="irAPagar(event)" class="btn-block js-pago">Obtener los 4 cursos</a>
         <p class="precio-seguro">Pago 100% seguro con Stripe · recibes todo por correo al instante · <strong>garantía de resultado</strong></p>
         <div class="pago-metodos">
