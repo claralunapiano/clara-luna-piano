@@ -3,28 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>¡Gracias! — Piano Academy · Clara</title>
+  <meta name="robots" content="noindex">
+  <title>¡Gracias por tu compra! — Piano Academy · Clara</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%236d1f2c'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%23f7f1e4'%3E%E2%99%AB%3C/text%3E%3C/svg%3E">
 
   <!-- GTM -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WKRXFW78');</script>
 
-  <!-- Meta Pixel -->
+  <!-- Meta Pixel Code -->
   <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1463049405557753');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1317056650594410');
   fbq('track', 'PageView');
-  fbq('track', 'Purchase', { value: 739, currency: 'MXN' });
+  fbq('track', 'Purchase', { value: 739, currency: 'MXN', content_name: 'Piano Academy — 4 cursos' });
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1463049405557753&ev=Purchase&noscript=1"/></noscript>
+  src="https://www.facebook.com/tr?id=1317056650594410&ev=Purchase&cd[value]=739&cd[currency]=MXN&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'compra_completada', valor: 739, moneda: 'MXN' });
+  </script>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,6 +43,8 @@
       background: #f7f1e4;
       color: #2b2119;
       font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.6;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -39,64 +52,64 @@
       padding: 40px 20px;
     }
     .card {
-      max-width: 560px;
+      max-width: 580px;
       width: 100%;
+      background: #fffdf8;
       border: 1px solid #c9a24b;
-      padding: 56px 48px;
+      border-radius: 20px;
+      padding: 54px clamp(24px, 6vw, 52px) 44px;
       text-align: center;
+      box-shadow: 0 34px 64px -28px rgba(43,33,25,0.35);
     }
-    .diamond {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      max-width: 160px;
-      margin: 0 auto 32px;
+    .sello {
+      width: 74px; height: 74px; border-radius: 50%;
+      background: linear-gradient(135deg, #8a2636, #6d1f2c 65%);
+      color: #f7f1e4;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 34px; margin: 0 auto 26px;
+      box-shadow: 0 14px 28px -10px rgba(109,31,44,0.6);
     }
-    .diamond span:first-child,
-    .diamond span:last-child { flex: 1; height: 1px; background: #c9a24b; }
-    .diamond i { width: 7px; height: 7px; background: #c9a24b; transform: rotate(45deg); flex-shrink: 0; }
     h1 {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.1;
-      margin-bottom: 16px;
+      font-size: clamp(28px, 4.4vw, 40px);
+      line-height: 1.15;
+      margin-bottom: 18px;
     }
     h1 em { font-style: italic; color: #6d1f2c; }
-    p {
-      font-size: 17px;
+    p { color: rgba(43,33,25,0.75); margin-bottom: 14px; }
+    .aviso {
+      background: rgba(201,162,75,0.1);
+      border: 1px solid rgba(169,121,58,0.4);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin: 28px 0 24px;
+      font-size: 16px;
       line-height: 1.7;
-      color: rgba(43,33,25,0.72);
-      margin-bottom: 12px;
-    }
-    .highlight {
-      background: rgba(109,31,44,0.05);
-      border: 1px solid rgba(109,31,44,0.2);
-      padding: 20px 24px;
-      margin: 28px 0;
-      font-size: 15px;
-      line-height: 1.7;
+      text-align: left;
       color: rgba(43,33,25,0.8);
     }
-    .btn {
+    .aviso strong { color: #2b2119; }
+    .lista { list-style: none; text-align: left; margin: 0 0 4px; padding: 0; }
+    .lista li { font-size: 16px; padding-left: 26px; position: relative; margin-bottom: 8px; }
+    .lista li::before { content: '◆'; position: absolute; left: 0; top: 4px; color: #a9793a; font-size: 10px; }
+    a.btn {
       display: inline-block;
       font-family: 'Playfair Display', serif;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 13px;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: #f7f1e4;
-      background: #6d1f2c;
-      padding: 14px 32px;
+      background: linear-gradient(135deg, #8a2636, #6d1f2c 60%);
+      padding: 15px 34px;
+      border-radius: 8px;
       text-decoration: none;
-      margin-top: 8px;
+      margin-top: 10px;
     }
-    .brand {
-      margin-top: 40px;
-      font-family: 'Playfair Display', serif;
-      font-size: 15px;
-      color: rgba(43,33,25,0.45);
-    }
+    .soporte { font-size: 15px; margin-top: 26px; padding-top: 22px; border-top: 1px solid rgba(169,121,58,0.3); }
+    .soporte a { color: #6d1f2c; }
+    .brand { margin-top: 30px; font-family: 'Playfair Display', serif; font-size: 15px; color: rgba(43,33,25,0.45); }
     .brand em { font-style: italic; color: #6d1f2c; }
   </style>
 </head>
@@ -104,17 +117,28 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKRXFW78" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="card">
-  <div class="diamond"><span></span><i></i><span></span></div>
-  <h1>¡Tu compra<br><em>fue exitosa!</em></h1>
-  <p>En unos minutos recibirás un correo en tu bandeja de entrada con todos tus materiales.</p>
-  <div class="highlight">
-    📬 Revisa también tu carpeta de <strong>spam o promociones</strong> por si el correo llega ahí.<br>
-    El remitente es <strong>cursos@claraluna.online</strong>
+  <div class="sello">♪</div>
+  <h1>¡Tu compra fue<br><em>un éxito!</em></h1>
+  <p>Ya eres parte de Piano Academy. En los próximos minutos te llega un correo con los links de descarga de tus 4 cursos.</p>
+
+  <ul class="lista">
+    <li>Guía completa Vol. I — Cómo tocar piano y leer partituras</li>
+    <li>Guía completa Vol. II — Nivel intermedio-avanzado</li>
+    <li>30 ejercicios de coordinación a dos manos, en video</li>
+    <li>30 ejercicios de coordinación Vol. II, en video</li>
+  </ul>
+
+  <div class="aviso">
+    Revisa también tu carpeta de <strong>spam o promociones</strong>: a veces el correo llega ahí.<br>
+    El remitente es <strong>cursos@claraluna.online</strong>.<br>
+    Te recomiendo descargar los archivos a tu dispositivo para tenerlos siempre a la mano.
   </div>
-  <p style="font-size:15px;">¿No recibes el correo en 10 minutos? Escríbeme a<br>
-    <a href="mailto:claritapianoartist@gmail.com" style="color:#6d1f2c;">claritapianoartist@gmail.com</a>
-  </p>
+
   <a href="https://pianoacademycl.com" class="btn">Volver al inicio</a>
+
+  <p class="soporte">¿No te llegó el correo en 10 minutos? Escríbeme a<br>
+    <a href="mailto:cursos@claraluna.online">cursos@claraluna.online</a> y lo resuelvo enseguida.</p>
+
   <p class="brand">Piano Academy <em>— Clara</em></p>
 </div>
 </body>
