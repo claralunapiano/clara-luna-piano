@@ -370,22 +370,6 @@
       background: #2b2119;
     }
     .video-wrap iframe { width: 100%; height: 100%; display: block; border: 0; }
-    .leccion-datos {
-      max-width: 860px; margin: 26px auto 0;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-    }
-    @media (max-width: 700px) { .leccion-datos { grid-template-columns: 1fr; gap: 14px; } }
-    .leccion-datos > div {
-      border-left: 2px solid #c9a24b; padding-left: 16px;
-    }
-    .leccion-datos strong {
-      display: block; font-family: 'Playfair Display', serif; font-weight: 600; font-size: 18px; margin-bottom: 2px;
-    }
-    .leccion-datos span { font-size: 15px; color: rgba(43,33,25,0.68); line-height: 1.5; }
-    .hero-link {
-      display: inline-block; margin-top: 14px; font-size: 16px;
-      color: #6d1f2c; text-decoration: underline; text-underline-offset: 3px;
-    }
 
     /* ── DESGLOSE DE VALOR ── */
     .precio-list li.item-precio { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; }
@@ -533,7 +517,7 @@
 <!-- NAV -->
 <nav>
   <span class="nav-brand">Piano Academy <em style="font-style:italic;color:#6d1f2c">— Clara</em></span>
-  <a href="#leccion">Lección gratis</a>
+  <a href="#bienvenida">Bienvenida</a>
   <a href="#curso">Curso</a>
   <a href="#precio">Precio</a>
   <a href="#faq">Preguntas</a>
@@ -555,12 +539,24 @@
         <a href="#para-ti" class="btn-primary">Quiero aprender a tocar piano</a>
         <span class="price-inline"><strong class="js-precio">$739 MXN</strong> · pago único · 4 cursos</span>
       </div>
-      <a href="#leccion" class="hero-link">▸ O mira una clase completa del curso, gratis</a>
     </div>
     <figure>
       <img src="carla.jpg" alt="Clara tocando el piano" width="600" height="750">
       <span class="hero-tag">"Un método que sí funciona" — @claralunartist</span>
     </figure>
+  </section>
+
+  <!-- VIDEO DE BIENVENIDA -->
+  <section class="leccion-section" id="bienvenida">
+    <div class="section-header">
+      <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
+      <span class="section-eyebrow">Bienvenida</span>
+      <h2>Antes de empezar, <em>un mensaje para ti</em></h2>
+      <p>Dale play y te cuento de qué se trata el método y cómo vas a avanzar.</p>
+    </div>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/ROITv07HZHY" title="Video de bienvenida — Piano Academy by Clara" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
   </section>
 
   <!-- STATS -->
@@ -570,24 +566,6 @@
     <div><div class="stat-num">9</div><div class="stat-label">Módulos</div></div>
     <div><div class="stat-num">+7 hrs</div><div class="stat-label">Contenido en video</div></div>
   </div>
-
-  <!-- LECCIÓN GRATIS -->
-  <section class="leccion-section" id="leccion">
-    <div class="section-header">
-      <div class="divider" style="margin-bottom:18px"><span></span><span class="diamond"></span><span></span></div>
-      <span class="section-eyebrow">Lección de muestra</span>
-      <h2>Prueba el curso <em>gratis</em></h2>
-      <p>Antes de decidir, mira una clase completa, tal cual está dentro del curso: las notas musicales, el pentagrama y las claves de Sol y Fa.</p>
-    </div>
-    <div class="video-wrap">
-      <iframe src="https://www.youtube-nocookie.com/embed/uBQQpgTXkFo" title="Lección de muestra — Las notas musicales" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-    <div class="leccion-datos">
-      <div><strong>Lección 5</strong><span>Las notas musicales: pentagrama y claves de Sol y Fa</span></div>
-      <div><strong>16 minutos</strong><span>Clase completa, con explicación y ejercicios</span></div>
-      <div><strong>Desde cero</strong><span>No necesitas saber nada de música para seguirla</span></div>
-    </div>
-  </section>
 
   <!-- OBJECIONES -->
   <section id="para-ti" style="padding:0 0 8px">
